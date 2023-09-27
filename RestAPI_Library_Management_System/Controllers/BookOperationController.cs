@@ -23,8 +23,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 if (dbContext.Books.Any(b => b.Title == title && b.Author == author))
                 {
                     Console.WriteLine("The book with the same title and author already exists in the library.");
-                    Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
-                    Console.ReadKey();
+                    
                     return;
                 }
                 var newBook = new Book
@@ -39,8 +38,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 dbContext.SaveChanges();
 
                 Console.WriteLine("Book added successfully to the library.");
-                Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
-                Console.ReadKey();
+              
             
         }
         [HttpDelete]
@@ -54,14 +52,12 @@ namespace RestAPI_Library_Management_System.Controllers
                     dbContext.Books.Remove(bookToRemove);
                     dbContext.SaveChanges();
                     Console.WriteLine($"Book '{title}' has been removed from the library.");
-                    Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
-                    Console.ReadKey();
+                   
                 }
                 else
                 {
                     Console.WriteLine($"Book '{title}' was not found in the library.");
-                    Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
-                    Console.ReadKey();
+                    
                 }
 
             
@@ -84,14 +80,12 @@ namespace RestAPI_Library_Management_System.Controllers
                     dbContext.SaveChanges();
 
                     Console.WriteLine($"Book with ID {bookId} has been updated.");
-                    Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
-                    Console.ReadKey();
+                    
                 }
                 else
                 {
                     Console.WriteLine($"Book with ID {bookId} was not found.");
-                    Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
-                    Console.ReadKey();
+               
                 }
             
         }
@@ -116,14 +110,12 @@ namespace RestAPI_Library_Management_System.Controllers
                         Console.WriteLine("---------------------------");
 
                     }
-                    Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
-                    Console.ReadKey();
+                  
                 }
                 else
                 {
                     Console.WriteLine("No books found in the library.");
-                    Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
-                    Console.ReadKey();
+                 
                 }
             
         }
