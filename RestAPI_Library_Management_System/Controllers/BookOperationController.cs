@@ -15,7 +15,7 @@ namespace RestAPI_Library_Management_System.Controllers
         {
             dbContext = DB;
         }
-
+        [HttpPost]
         public void AddBook(string title, string author, int publicationYear)
         {
 
@@ -43,6 +43,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 Console.ReadKey();
             
         }
+        [HttpDelete]
         public void RemoveBook(string title)
         {
            
@@ -65,7 +66,7 @@ namespace RestAPI_Library_Management_System.Controllers
 
             
         }
-
+        [HttpPut]
         public void UpdateBook(int bookId, string newTitle, string newAuthor, int newPublicationYear)
         {
             
@@ -94,7 +95,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 }
             
         }
-
+        [HttpGet]
         public void ViewAllBooks()
         {
            
