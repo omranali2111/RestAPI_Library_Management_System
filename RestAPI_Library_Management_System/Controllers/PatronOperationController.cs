@@ -100,6 +100,42 @@ namespace RestAPI_Library_Management_System.Controllers
                 }
             
         }
+        [HttpGet("get-patron-by-name")]
+        public void GetPatronByName(string patronName)
+        {
+            var patron = dbContext.Patrons.FirstOrDefault(p => p.Name == patronName);
+
+            if (patron != null)
+            {
+                Console.WriteLine($"Patron found: ID: {patron.Id}, Name: {patron.Name}, Contact Information: {patron.ContactNumber}");
+            }
+            else
+            {
+                Console.WriteLine($"Patron with name '{patronName}' not found.");
+            }
+        }
+
+        [HttpGet("get-patrons-by-age-range")]
+        public void GetPatronsByAgeRange(int minAge, int maxAge)
+        {
+            var today = DateTime.Today;
+            var patrons = dbContext.Patrons
+                .Where(p => today.Year - p.Age >= minAge && today.Year - p.Age <= maxAge)
+                .ToList();
+
+            if (patrons.Count > 0)
+            {
+                Console.WriteLine($"List of Patrons in age range {minAge} - {maxAge}:");
+                foreach (var patron in patrons)
+                {
+                    Console.WriteLine($"ID: {patron.Id}, Name: {patron.Name}, Contact Information: {patron.ContactNumber}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"No patrons found in the age range {minAge} - {maxAge}.");
+            }
+        }
         [HttpPost("BorrowBook")]
         public void BorrowBook(int patronId, int bookId)
         {
@@ -178,37 +214,6 @@ namespace RestAPI_Library_Management_System.Controllers
             
         }
 
-        [HttpGet("ViewBorrowingHistory")]
-        public void ViewBorrowingHistory(int patronId)
-        {
-           
-                var borrowingHistory = dbContext.BorrowingHistories
-                    .Include(history => history.patron)
-                    .Include(history => history.book)
-                    .Where(history => history.PatronId == patronId)
-                    .ToList();
-
-                if (borrowingHistory != null && borrowingHistory.Any())
-                {
-                    var patron = borrowingHistory.First().patron;
-                    Console.WriteLine($"Borrowing History for Patron: {patron.Name}");
-                    Console.WriteLine("------------------------------------------------");
-
-                    foreach (var history in borrowingHistory)
-                    {
-                        Console.WriteLine($"Book Title: {history.book.Title}");
-                        Console.WriteLine($"Borrow Date: {history.BorrowDate}");
-                        Console.WriteLine($"Return Date: {history.ReturnDate ?? DateTime.MinValue}"); // Use DateTime.MinValue if ReturnDate is null
-                        Console.WriteLine();
-                    }
-                    
-                }
-                else
-                {
-                    Console.WriteLine($"No borrowing history found for Patron with ID {patronId}.");
-               
-                }
-            
-        }
+       
     }
 }

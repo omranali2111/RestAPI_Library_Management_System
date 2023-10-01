@@ -14,5 +14,8 @@ namespace RestAPI_Library_Management_System.models
         [MaxLength(255)]
         public string ContactNumber { get; set; }
 
+        [MaxLength(255)]
+        public int Age { get; set; }
+
     }
 }
