@@ -19,7 +19,7 @@ namespace RestAPI_Library_Management_System.Controllers
         {
             dbContext = DB;
         }
-        [HttpPost]
+        [HttpPost("add-patron")] 
         public void AddPatron(string name, string contactInfo)
         {
            
@@ -78,7 +78,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 }
             
         }
-        [HttpPost]
+        [HttpGet("view-all-patrons")]
         public void ViewAllPatrons()
         {
            
@@ -140,8 +140,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 Console.WriteLine("Invalid patron or book ID. Please check and try again.");
             }
 
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
-            Console.ReadKey();
+          
         }
         [HttpPut("flag")]
         private bool ToggleBookAvailability(Book book )
