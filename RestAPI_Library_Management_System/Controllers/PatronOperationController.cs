@@ -19,10 +19,11 @@ namespace RestAPI_Library_Management_System.Controllers
         {
             dbContext = DB;
         }
-        [HttpPost("add-patron")] 
-        public void AddPatron(string name, string contactInfo)
+        [HttpPost("add-patron")]
+        public IActionResult AddPatron(string name, string contactInfo)
         {
-           
+            try
+            {
                 var newPatron = new Patron
                 {
                     Name = name,
@@ -32,188 +33,250 @@ namespace RestAPI_Library_Management_System.Controllers
                 dbContext.Patrons.Add(newPatron);
                 dbContext.SaveChanges();
 
-                Console.WriteLine("Patron added successfully to the library.");
-              
+                return Ok("Patron added successfully to the library.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
         }
-        [HttpDelete]
-        public void RemovePatron(int patronId)
+
+        [HttpDelete("remove-patron/{patronId}")]
+        public IActionResult RemovePatron(int patronId)
         {
-           
+            try
+            {
                 var patronToRemove = dbContext.Patrons.FirstOrDefault(patron => patron.Id == patronId);
 
                 if (patronToRemove != null)
                 {
-                    // Remove the patron from the context and save changes
                     dbContext.Patrons.Remove(patronToRemove);
                     dbContext.SaveChanges();
-                    Console.WriteLine($"Patron with ID {patronId} has been removed.");
+
+                    return Ok($"Patron with ID {patronId} has been removed.");
                 }
                 else
                 {
-                    Console.WriteLine($"Patron with ID {patronId} was not found.");
+                    return NotFound($"Patron with ID {patronId} was not found.");
                 }
-            
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
         }
-        [HttpPut]
-        public void UpdatePatron(int patronId, string name, string contactInformation)
+
+        [HttpPut("update-patron/{patronId}")]
+        public IActionResult UpdatePatron(int patronId, string name, string contactInformation)
         {
-           
+            try
+            {
                 var patronToUpdate = dbContext.Patrons.FirstOrDefault(patron => patron.Id == patronId);
 
                 if (patronToUpdate != null)
                 {
-                    // Update the patron's information
                     patronToUpdate.Name = name;
                     patronToUpdate.ContactNumber = contactInformation;
 
                     dbContext.SaveChanges();
 
-                    Console.WriteLine($"Patron with ID {patronId} has been updated.");
-                   
+                    return Ok($"Patron with ID {patronId} has been updated.");
                 }
                 else
                 {
-                    Console.WriteLine($"Patron with ID {patronId} was not found in the library.");
-                   
+                    return NotFound($"Patron with ID {patronId} was not found in the library.");
                 }
-            
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
         }
+
         [HttpGet("view-all-patrons")]
-        public void ViewAllPatrons()
+        public IActionResult ViewAllPatrons()
         {
-           
+            try
+            {
                 var patrons = dbContext.Patrons.ToList();
 
                 if (patrons.Count > 0)
                 {
-                    Console.WriteLine("List of Patrons:");
-                    foreach (var patron in patrons)
-                    {
-                        Console.WriteLine($"ID: {patron.Id}, Name: {patron.Name}, Contact Information: {patron.ContactNumber}");
-                        
-                    }
+                    var patronList = patrons.Select(patron =>
+                        new
+                        {
+                            Id = patron.Id,
+                            Name = patron.Name,
+                            ContactInformation = patron.ContactNumber
+                        }).ToList();
+
+                    return Ok(patronList);
                 }
                 else
                 {
-                    Console.WriteLine("No patrons found in the library.");
-                
+                    return NotFound("No patrons found in the library.");
                 }
-            
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
         }
         [HttpGet("get-patron-by-name")]
-        public void GetPatronByName(string patronName)
+        public IActionResult GetPatronByName(string patronName)
         {
-            var patron = dbContext.Patrons.FirstOrDefault(p => p.Name == patronName);
+            try
+            {
+                var patron = dbContext.Patrons.FirstOrDefault(p => p.Name == patronName);
 
-            if (patron != null)
-            {
-                Console.WriteLine($"Patron found: ID: {patron.Id}, Name: {patron.Name}, Contact Information: {patron.ContactNumber}");
+                if (patron != null)
+                {
+                    var patronInfo = new
+                    {
+                        Id = patron.Id,
+                        Name = patron.Name,
+                        ContactInformation = patron.ContactNumber
+                    };
+
+                    return Ok(patronInfo);
+                }
+                else
+                {
+                    return NotFound($"Patron with name '{patronName}' not found.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Patron with name '{patronName}' not found.");
+                return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
 
         [HttpGet("get-patrons-by-age-range")]
-        public void GetPatronsByAgeRange(int minAge, int maxAge)
+        public IActionResult GetPatronsByAgeRange(int minAge, int maxAge)
         {
-            var today = DateTime.Today;
-            var patrons = dbContext.Patrons
-                .Where(p => today.Year - p.Age >= minAge && today.Year - p.Age <= maxAge)
-                .ToList();
-
-            if (patrons.Count > 0)
+            try
             {
-                Console.WriteLine($"List of Patrons in age range {minAge} - {maxAge}:");
-                foreach (var patron in patrons)
+                var today = DateTime.Today;
+                var patrons = dbContext.Patrons
+                    .Where(p => today.Year - p.Age >= minAge && today.Year - p.Age <= maxAge)
+                    .ToList();
+
+                if (patrons.Count > 0)
                 {
-                    Console.WriteLine($"ID: {patron.Id}, Name: {patron.Name}, Contact Information: {patron.ContactNumber}");
-                }
-            }
-            else
-            {
-                Console.WriteLine($"No patrons found in the age range {minAge} - {maxAge}.");
-            }
-        }
-        [HttpPost("BorrowBook")]
-        public void BorrowBook(int patronId, int bookId)
-        {
-            var patron = dbContext.Patrons.FirstOrDefault(p => p.Id == patronId);
-            var book = dbContext.Books.FirstOrDefault(b => b.Id == bookId);
+                    var patronList = patrons.Select(patron =>
+                        new
+                        {
+                            Id = patron.Id,
+                            Name = patron.Name,
+                            ContactInformation = patron.ContactNumber
+                        }).ToList();
 
-            if (patron != null && book != null)
-            {
-                if (book.IsAvailable==true)
-                {
-                    // Calculate the return date as 2 weeks from the current date
-                    var returnDate = DateTime.Now.AddDays(14);
-
-                    // Create a borrowing record
-                    var borrowingRecord = new BorrowingHistory
-                    {
-                        PatronId = patronId,
-                        BookId = bookId,
-                        BorrowDate = DateTime.Now,
-                        ReturnDate = returnDate
-                    };
-                    ToggleBookAvailability(book);
-
-                    // Add the borrowing record to the database
-                    dbContext.BorrowingHistories.Add(borrowingRecord);
-                    dbContext.SaveChanges();
-
-                    Console.WriteLine($"Patron {patron.Name} has borrowed the book '{book.Title}'.");
-                    Console.WriteLine($"Please return the book by {returnDate.ToString("yyyy-MM-dd")}.");
+                    return Ok(patronList);
                 }
                 else
                 {
-                    Console.WriteLine($"Book '{book.Title}' is not available for borrowing.");
+                    return NotFound($"No patrons found in the age range {minAge} - {maxAge}.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Invalid patron or book ID. Please check and try again.");
+                return StatusCode(500, $"An error occurred: {ex.Message}");
             }
-
-          
         }
+
+        [HttpPost("BorrowBook")]
+        public IActionResult BorrowBook(int patronId, int bookId)
+        {
+            try
+            {
+                var patron = dbContext.Patrons.FirstOrDefault(p => p.Id == patronId);
+                var book = dbContext.Books.FirstOrDefault(b => b.Id == bookId);
+
+                if (patron != null && book != null)
+                {
+                    if (book.IsAvailable == true)
+                    {
+                        var returnDate = DateTime.Now.AddDays(14);
+
+                        var borrowingRecord = new BorrowingHistory
+                        {
+                            PatronId = patronId,
+                            BookId = bookId,
+                            BorrowDate = DateTime.Now,
+                            ReturnDate = returnDate
+                        };
+                        ToggleBookAvailability(book);
+
+                        dbContext.BorrowingHistories.Add(borrowingRecord);
+                        dbContext.SaveChanges();
+
+                        var result = new
+                        {
+                            Message = $"Patron {patron.Name} has borrowed the book '{book.Title}'.",
+                            ReturnDate = returnDate.ToString("yyyy-MM-dd")
+                        };
+
+                        return Ok(result);
+                    }
+                    else
+                    {
+                        return BadRequest($"Book '{book.Title}' is not available for borrowing.");
+                    }
+                }
+                else
+                {
+                    return NotFound("Invalid patron or book ID. Please check and try again.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
+
         [HttpPut("flag")]
-        private bool ToggleBookAvailability(Book book )
+        private bool ToggleBookAvailability(Book book)
         {
             bool isAvailable = book.IsAvailable;
-            book.IsAvailable = !isAvailable; // Toggle the flag
-            return isAvailable; // Return the previous state
+            book.IsAvailable = !isAvailable;
+            return isAvailable;
         }
         [HttpPost("ReturnBook")]
-        public void ReturnBook(int bookId)
+        public IActionResult ReturnBook(int bookId)
         {
-            var book = dbContext.Books.FirstOrDefault(b => b.Id == bookId);
-            var borrowedBook = dbContext.BorrowingHistories
-                    .Include(bh => bh.book)
-                    .Include(bh => bh.patron)
-                    .FirstOrDefault(bh => bh.BookId == bookId);
-
-            if (borrowedBook != null)
+            try
             {
-                // Set the return date to the current date (book is returned)
-                borrowedBook.ReturnDate = DateTime.Now;
-                ToggleBookAvailability(book);
+                var book = dbContext.Books.FirstOrDefault(b => b.Id == bookId);
+                var borrowedBook = dbContext.BorrowingHistories
+                        .Include(bh => bh.book)
+                        .Include(bh => bh.patron)
+                        .FirstOrDefault(bh => bh.BookId == bookId);
 
+                if (borrowedBook != null)
+                {
+                    borrowedBook.ReturnDate = DateTime.Now;
+                    ToggleBookAvailability(book);
 
-                dbContext.SaveChanges();
+                    dbContext.SaveChanges();
 
-                Console.WriteLine($"Book '{borrowedBook.book.Title}' has been returned by Patron '{borrowedBook.patron.Name}'.");
-                    
+                    var result = new
+                    {
+                        Message = $"Book '{borrowedBook.book.Title}' has been returned by Patron '{borrowedBook.patron.Name}'."
+                    };
+
+                    return Ok(result);
                 }
                 else
                 {
-                    Console.WriteLine("Book not found in the borrowing history or already returned.");
-                    
+                    return NotFound("Book not found in the borrowing history or already returned.");
                 }
-            
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
         }
 
-       
+
     }
 }

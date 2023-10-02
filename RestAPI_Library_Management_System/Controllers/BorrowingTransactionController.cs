@@ -15,165 +15,210 @@ namespace RestAPI_Library_Management_System.Controllers
             dbContext = DB;
         }
         [HttpGet("ViewBorrowingHistory")]
-        public void ViewBorrowingHistory(int patronId)
+        public IActionResult ViewBorrowingHistory(int patronId)
         {
-
-            var borrowingHistory = dbContext.BorrowingHistories
-                .Include(history => history.patron)
-                .Include(history => history.book)
-                .Where(history => history.PatronId == patronId)
-                .ToList();
-
-            if (borrowingHistory != null && borrowingHistory.Any())
+            try
             {
-                var patron = borrowingHistory.First().patron;
-                Console.WriteLine($"Borrowing History for Patron: {patron.Name}");
-                Console.WriteLine("------------------------------------------------");
+                var borrowingHistory = dbContext.BorrowingHistories
+                    .Include(history => history.patron)
+                    .Include(history => history.book)
+                    .Where(history => history.PatronId == patronId)
+                    .ToList();
 
-                foreach (var history in borrowingHistory)
+                if (borrowingHistory != null && borrowingHistory.Any())
                 {
-                    Console.WriteLine($"Book Title: {history.book.Title}");
-                    Console.WriteLine($"Borrow Date: {history.BorrowDate}");
-                    Console.WriteLine($"Return Date: {history.ReturnDate ?? DateTime.MinValue}"); // Use DateTime.MinValue if ReturnDate is null
-                    Console.WriteLine();
+                    var patron = borrowingHistory.First().patron;
+                    var historyList = borrowingHistory.Select(history => new
+                    {
+                        BookTitle = history.book.Title,
+                        BorrowDate = history.BorrowDate,
+                        ReturnDate = history.ReturnDate ?? DateTime.MinValue
+                    }).ToList();
+
+                    var result = new
+                    {
+                        PatronName = patron.Name,
+                        BorrowingHistory = historyList
+                    };
+
+                    return Ok(result);
                 }
-
+                else
+                {
+                    return NotFound($"No borrowing history found for Patron with ID {patronId}.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"No borrowing history found for Patron with ID {patronId}.");
-
+                return StatusCode(500, $"An error occurred: {ex.Message}");
             }
-
         }
+
         [HttpDelete("RemoveBorrowingTransaction/{transactionId}")]
-        public void RemoveBorrowingTransaction(int transactionId)
+        public IActionResult RemoveBorrowingTransaction(int transactionId)
         {
-            var transactionToRemove = dbContext.BorrowingHistories.Find(transactionId);
-
-            if (transactionToRemove == null)
+            try
             {
-                
-                Console.WriteLine($"Borrowing transaction with ID {transactionId} not found.");
-            }
-            else
-            {
-                dbContext.BorrowingHistories.Remove(transactionToRemove);
-                dbContext.SaveChanges();
+                var transactionToRemove = dbContext.BorrowingHistories.Find(transactionId);
 
-
-                Console.WriteLine($"Borrowing transaction with ID {transactionId} has been removed.");
-            }
-        }
-        [HttpGet("TransactionsByBorrowDate")]
-        public void TransactionsByBorrowDate(DateTime borrowDate)
-        {
-            var transactions = dbContext.BorrowingHistories
-                .Where(history => history.BorrowDate.Date == borrowDate.Date)
-                .ToList();
-
-            if (transactions != null && transactions.Any())
-            {
-               
-                foreach (var transaction in transactions)
+                if (transactionToRemove == null)
                 {
-                    Console.WriteLine($"Book Title: {transaction.book.Title}");
-                    Console.WriteLine($"Borrow Date: {transaction.BorrowDate}");
-                    Console.WriteLine($"Return Date: {transaction.ReturnDate ?? DateTime.MinValue}"); // Use DateTime.MinValue if ReturnDate is null
-                    Console.WriteLine();
+                    return NotFound($"Borrowing transaction with ID {transactionId} not found.");
+                }
+                else
+                {
+                    dbContext.BorrowingHistories.Remove(transactionToRemove);
+                    dbContext.SaveChanges();
+
+                    return Ok($"Borrowing transaction with ID {transactionId} has been removed.");
                 }
             }
-            else
+            catch (Exception ex)
             {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
 
-                Console.WriteLine($"No transactions found with Borrow Date {borrowDate.Date}.");
+        [HttpGet("TransactionsByBorrowDate")]
+        public IActionResult TransactionsByBorrowDate(DateTime borrowDate)
+        {
+            try
+            {
+                var transactions = dbContext.BorrowingHistories
+                    .Where(history => history.BorrowDate.Date == borrowDate.Date)
+                    .ToList();
+
+                if (transactions != null && transactions.Any())
+                {
+                    var historyList = transactions.Select(history => new
+                    {
+                        BookTitle = history.book.Title,
+                        BorrowDate = history.BorrowDate,
+                        ReturnDate = history.ReturnDate ?? DateTime.MinValue
+                    }).ToList();
+
+                    return Ok(historyList);
+                }
+                else
+                {
+                    return NotFound($"No transactions found with Borrow Date {borrowDate.Date}.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
 
         [HttpGet("TransactionsByReturnDate")]
-        public void TransactionsByReturnDate(DateTime returnDate)
+        public IActionResult TransactionsByReturnDate(DateTime returnDate)
         {
-            var transactions = dbContext.BorrowingHistories
-                .Where(history => history.ReturnDate != null && history.ReturnDate.Value.Date == returnDate.Date)
-                .ToList();
-
-            if (transactions != null && transactions.Any())
+            try
             {
-               
-                foreach (var transaction in transactions)
+                var transactions = dbContext.BorrowingHistories
+                    .Where(history => history.ReturnDate != null && history.ReturnDate.Value.Date == returnDate.Date)
+                    .ToList();
+
+                if (transactions != null && transactions.Any())
                 {
-                    Console.WriteLine($"Book Title: {transaction.book.Title}");
-                    Console.WriteLine($"Borrow Date: {transaction.BorrowDate}");
-                    Console.WriteLine($"Return Date: {transaction.ReturnDate ?? DateTime.MinValue}"); // Use DateTime.MinValue if ReturnDate is null
-                    Console.WriteLine();
+                    var historyList = transactions.Select(history => new
+                    {
+                        BookTitle = history.book.Title,
+                        BorrowDate = history.BorrowDate,
+                        ReturnDate = history.ReturnDate ?? DateTime.MinValue
+                    }).ToList();
+
+                    return Ok(historyList);
+                }
+                else
+                {
+                    return NotFound($"No transactions found with Return Date {returnDate.Date}.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-
-                Console.WriteLine($"No transactions found with Return Date {returnDate.Date}.");
+                return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
 
         [HttpGet("TransactionsByPatron")]
-        public void TransactionsByPatron(int patronId)
+        public IActionResult TransactionsByPatron(int patronId)
         {
-            var transactions = dbContext.BorrowingHistories
-                .Include(history => history.patron)
-                .Where(history => history.PatronId == patronId)
-                .ToList();
-
-            if (transactions != null && transactions.Any())
+            try
             {
-               
-                foreach (var transaction in transactions)
+                var transactions = dbContext.BorrowingHistories
+                    .Include(history => history.patron)
+                    .Where(history => history.PatronId == patronId)
+                    .ToList();
+
+                if (transactions != null && transactions.Any())
                 {
-                    Console.WriteLine($"Book Title: {transaction.book.Title}");
-                    Console.WriteLine($"Borrow Date: {transaction.BorrowDate}");
-                    Console.WriteLine($"Return Date: {transaction.ReturnDate ?? DateTime.MinValue}"); // Use DateTime.MinValue if ReturnDate is null
-                    Console.WriteLine();
+                    var historyList = transactions.Select(history => new
+                    {
+                        BookTitle = history.book.Title,
+                        BorrowDate = history.BorrowDate,
+                        ReturnDate = history.ReturnDate ?? DateTime.MinValue
+                    }).ToList();
+
+                    return Ok(historyList);
+                }
+                else
+                {
+                    return NotFound($"No transactions found for Patron with ID {patronId}.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-               
-                Console.WriteLine($"No transactions found for Patron with ID {patronId}.");
+                return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
 
         [HttpGet("TransactionsByBook")]
-        public void TransactionsByBook(int bookId)
+        public IActionResult TransactionsByBook(int bookId)
         {
-            var transactions = dbContext.BorrowingHistories
-                .Include(history => history.book)
-                .Where(history => history.BookId == bookId)
-                .ToList();
-
-            if (transactions != null && transactions.Any())
+            try
             {
-               
-                foreach (var transaction in transactions)
+                var transactions = dbContext.BorrowingHistories
+                    .Include(history => history.book)
+                    .Where(history => history.BookId == bookId)
+                    .ToList();
+
+                if (transactions != null && transactions.Any())
                 {
-                    Console.WriteLine($"Book Title: {transaction.book.Title}");
-                    Console.WriteLine($"Borrow Date: {transaction.BorrowDate}");
-                    Console.WriteLine($"Return Date: {transaction.ReturnDate ?? DateTime.MinValue}"); // Use DateTime.MinValue if ReturnDate is null
-                    Console.WriteLine();
+                    var historyList = transactions.Select(history => new
+                    {
+                        PatronName = history.patron.Name,
+                        BorrowDate = history.BorrowDate,
+                        ReturnDate = history.ReturnDate ?? DateTime.MinValue
+                    }).ToList();
+
+                    return Ok(historyList);
+                }
+                else
+                {
+                    return NotFound($"No transactions found for Book with ID {bookId}.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-            
-               Console.WriteLine($"No transactions found for Book with ID {bookId}.");
+                return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
 
         [HttpGet("BorrowCountForBook")]
-        public void BorrowCountForBook(int bookId)
+        public IActionResult BorrowCountForBook(int bookId)
         {
-            var borrowCount = dbContext.BorrowingHistories
-                .Count(history => history.BookId == bookId);
+            try
+            {
+                var borrowCount = dbContext.BorrowingHistories
+                    .Count(history => history.BookId == bookId);
 
-           Console.WriteLine($"Borrow count for Book with ID {bookId}: {borrowCount}");
+                return Ok($"Borrow count for Book with ID {bookId}: {borrowCount}");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
         }
 
     }
