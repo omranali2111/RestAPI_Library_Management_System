@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RestAPI_Library_Management_System.models;
@@ -102,9 +103,9 @@ namespace RestAPI_Library_Management_System.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-
+        [Authorize]
        [HttpGet("ViewAllBooks")]
-public IActionResult ViewAllBooks()
+  public IActionResult ViewAllBooks()
 {
     try
     {

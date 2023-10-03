@@ -14,6 +14,7 @@ namespace RestAPI_Library_Management_System
         public DbSet<Book> Books { get; set; }
         public DbSet<Patron> Patrons { get; set; }
         public DbSet<BorrowingHistory> BorrowingHistories { get; set; }
+        public DbSet<User> Users { get; set; }
     }
     
     

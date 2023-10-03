@@ -12,8 +12,8 @@ using RestAPI_Library_Management_System;
 namespace RestAPI_Library_Management_System.Migrations
 {
     [DbContext(typeof(AppDbContextDbContext))]
-    [Migration("20231001062904_YourNewMigrationName")]
-    partial class YourNewMigrationName
+    [Migration("20231003070929_new")]
+    partial class @new
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -108,6 +108,23 @@ namespace RestAPI_Library_Management_System.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Patrons");
+                });
+
+            modelBuilder.Entity("RestAPI_Library_Management_System.models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Password")
+                        .HasMaxLength(255)
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("RestAPI_Library_Management_System.models.BorrowingHistory", b =>
