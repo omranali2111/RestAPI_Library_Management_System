@@ -36,12 +36,9 @@ namespace RestAPI_Library_Management_System.Controllers
                 dbContext.Books.Add(newBook);
                 dbContext.SaveChanges();
 
-                var result = new
-                {
-                    Message = "Book added successfully to the library."
-                };
+          
 
-                return Ok(result);
+                return Ok("Book added successfully to the library.");
             }
             catch (Exception ex)
             {
