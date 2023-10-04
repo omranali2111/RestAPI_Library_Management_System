@@ -20,47 +20,40 @@ namespace RestAPI_Library_Management_System.Controllers
             dbContext = DB;
         }
 
-        
-            [HttpPost("user-login")]
-            public IActionResult GenerateJwtToken(string email, string password)
+
+        [HttpPost("user-login")]
+        public IActionResult GenerateJwtToken(string email, string password)
+        {
+            var user = dbContext.Users.SingleOrDefault(u => u.Email == email && u.Password == password);
+
+            if (user != null)
             {
-                // Validate user credentials
-                var user = dbContext.Users.SingleOrDefault(u => u.Email == email && u.Password == password);
+                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is my custom Secret key for authentication"));
 
-                if (user == null)
-                {
-                    return Unauthorized(); // Return 401 Unauthorized if user not found
-                }
+                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            // Create claims for the user
-                 var claims = new List<Claim>();
-                new Claim(ClaimTypes.Email, user.Email);
+                var claims = new List<Claim>
+        {
+            new Claim("email", user.Email),
            
-                
+        };
 
-             
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this-is-my-token"));
-                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-                // Set token expiration time (adjust as needed)
-                var expiration = DateTime.UtcNow.AddHours(1);
-
-                // Create the JWT token
                 var token = new JwtSecurityToken(
-                    issuer: "omran",        
-                    audience: "all",    
+                    issuer: "omran",
+                    audience: "all",
                     claims: claims,
-                    expires: expiration,
-                    signingCredentials: creds
+                    expires: DateTime.Now.AddMinutes(120),
+                    signingCredentials: credentials
                 );
 
-                // Return the generated token
-                return Ok(new
-                {
-                    token = new JwtSecurityTokenHandler().WriteToken(token),
-                    expiration = expiration
-                });
+                return Ok(new JwtSecurityTokenHandler().WriteToken(token));
             }
+            else
+            {
+                return Unauthorized("Invalid credentials.");
+            }
+        }
+
     }
 }
 

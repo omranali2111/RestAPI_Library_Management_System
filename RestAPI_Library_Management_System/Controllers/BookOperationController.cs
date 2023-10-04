@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RestAPI_Library_Management_System.models;
+using Serilog;
 
 namespace RestAPI_Library_Management_System.Controllers
 {
@@ -16,6 +17,7 @@ namespace RestAPI_Library_Management_System.Controllers
         {
             dbContext = DB;
         }
+        
         [HttpPost("AddBook")]
         public IActionResult AddBook(string title, string author, int publicationYear)
         {
@@ -121,8 +123,8 @@ namespace RestAPI_Library_Management_System.Controllers
                 PublicationYear = book.PublicationYear,
                 Availability = book.IsAvailable ? "Available" : "Not Available"
             }).ToList();
-
-            return Ok(bookList);
+                   
+                    return Ok(bookList);
         }
         else
         {

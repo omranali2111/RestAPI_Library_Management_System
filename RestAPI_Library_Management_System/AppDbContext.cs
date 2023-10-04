@@ -6,9 +6,13 @@ namespace RestAPI_Library_Management_System
 {
     public class AppDbContextDbContext:DbContext
     {
+        public AppDbContextDbContext(DbContextOptions<AppDbContextDbContext> option)
+             :base(option)
+        {}
+                
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer("Data Source=(local);Initial Catalog=EFCoreLibrary; Integrated Security=true; TrustServerCertificate=True");
+            //options.UseSqlServer("Data Source=(local);Initial Catalog=EFCoreLibrary; Integrated Security=true; TrustServerCertificate=True");
         }
 
         public DbSet<Book> Books { get; set; }
