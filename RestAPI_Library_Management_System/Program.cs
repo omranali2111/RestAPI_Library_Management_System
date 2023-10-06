@@ -3,10 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using RestAPI_Library_Management_System;
 using Serilog;
 using System.Text;
-using Microsoft.Extensions.Logging;
-using System;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
