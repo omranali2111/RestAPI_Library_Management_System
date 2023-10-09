@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore; 
 using Microsoft.IdentityModel.Tokens;
 using RestAPI_Library_Management_System.models;
+using Serilog;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -22,9 +23,10 @@ namespace RestAPI_Library_Management_System.Controllers
 
 
         [HttpPost("user-login")]
-        public IActionResult GenerateJwtToken(string email, string password)
+        public IActionResult GenerateJwtToken(User data)
         {
-            var user = dbContext.Users.SingleOrDefault(u => u.Email == email && u.Password == password);
+            Log.Information($"Received login request - Email: {data.Email}, Password: {data.Password}");
+            var user = dbContext.Users.SingleOrDefault(u => u.Email ==data.Email && u.Password == data.Password);
 
             if (user != null)
             {
@@ -33,10 +35,10 @@ namespace RestAPI_Library_Management_System.Controllers
                 var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
                 var claims = new List<Claim>
-        {
-            new Claim("email", user.Email),
+                 {
+                        new Claim("email", user.Email),
            
-        };
+                 };
 
                 var token = new JwtSecurityToken(
                     issuer: "omran",
@@ -50,6 +52,7 @@ namespace RestAPI_Library_Management_System.Controllers
             }
             else
             {
+                Log.Warning($"Login failed - Invalid credentials.");
                 return Unauthorized("Invalid credentials.");
             }
         }

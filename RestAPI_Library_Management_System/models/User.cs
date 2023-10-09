@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace RestAPI_Library_Management_System.models
 {
     public class User
     {
+        [JsonIgnore]
         [Key]
         public int Id { get; set; }
 

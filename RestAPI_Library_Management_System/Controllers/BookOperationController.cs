@@ -105,7 +105,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-        [Authorize]
+       [Authorize]
        [HttpGet("ViewAllBooks")]
   public IActionResult ViewAllBooks()
 {

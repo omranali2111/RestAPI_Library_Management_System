@@ -1,0 +1,132 @@
+2023-10-08 13:03:10.821 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-08 13:03:11.199 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-08 13:03:11.233 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-08 13:03:11.249 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-08 13:03:11.251 +04:00 [INF] Hosting environment: Development
+2023-10-08 13:03:11.253 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-08 13:03:12.772 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-08 13:03:13.328 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 567.0769ms
+2023-10-08 13:03:13.352 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-08 13:03:13.352 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-08 13:03:13.361 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 8.2331ms
+2023-10-08 13:03:13.429 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 76.9941ms
+2023-10-08 13:03:13.549 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-08 13:03:13.692 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 143.3689ms
+2023-10-08 13:04:05.815 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-08 13:04:05.971 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:04:06.022 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(System.String, System.String) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-08 13:04:06.413 +04:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-10-08 13:04:06.462 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 428.882ms
+2023-10-08 13:04:06.469 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:04:06.474 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 400 in 643.3955 ms
+2023-10-08 13:04:06.481 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 400 - application/problem+json;+charset=utf-8 665.1800ms
+2023-10-08 13:05:39.811 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-08 13:05:39.814 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:05:39.822 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(System.String, System.String) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-08 13:05:39.839 +04:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-10-08 13:05:39.840 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 16.6054ms
+2023-10-08 13:05:39.841 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:05:39.842 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 400 in 27.9839 ms
+2023-10-08 13:05:39.842 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 400 - application/problem+json;+charset=utf-8 32.0248ms
+2023-10-08 13:17:53.309 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-08 13:17:54.139 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-08 13:17:54.141 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-08 13:17:54.145 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-08 13:17:54.146 +04:00 [INF] Hosting environment: Development
+2023-10-08 13:17:54.147 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-08 13:17:55.560 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-08 13:17:56.345 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-08 13:17:56.345 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-08 13:17:56.349 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 797.7297ms
+2023-10-08 13:17:56.358 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 12.7702ms
+2023-10-08 13:17:56.406 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 61.2176ms
+2023-10-08 13:17:56.525 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-08 13:17:56.683 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 158.0152ms
+2023-10-08 13:19:09.233 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-08 13:19:09.379 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:19:09.433 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(System.String, System.String) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-08 13:19:09.791 +04:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-10-08 13:19:09.831 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 388.9694ms
+2023-10-08 13:19:09.846 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:19:09.854 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 400 in 608.3872 ms
+2023-10-08 13:19:09.863 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 400 - application/problem+json;+charset=utf-8 629.9977ms
+2023-10-08 13:20:12.745 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login?email=omran%40hotmail.com&password=123 - 0
+2023-10-08 13:20:12.756 +04:00 [INF] CORS policy execution successful.
+2023-10-08 13:20:12.759 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:20:12.769 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(System.String, System.String) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-08 13:20:12.812 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-08 13:20:16.308 +04:00 [INF] Executed DbCommand (469ms) [Parameters=[@__email_0='?' (Size = 255), @__password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 AND [u].[Password] = @__password_1
+2023-10-08 13:20:16.578 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-08 13:20:16.579 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 3806.8096ms
+2023-10-08 13:20:16.580 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:20:16.580 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 3830.3839 ms
+2023-10-08 13:20:16.616 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login?email=omran%40hotmail.com&password=123 - 0 - 200 - text/plain;+charset=utf-8 3870.1702ms
+2023-10-08 13:25:22.396 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-08 13:25:22.651 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-08 13:25:22.654 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-08 13:25:22.661 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-08 13:25:22.662 +04:00 [INF] Hosting environment: Development
+2023-10-08 13:25:22.663 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-08 13:25:23.351 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-08 13:25:24.087 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-08 13:25:24.087 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-08 13:25:24.106 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 9.7694ms
+2023-10-08 13:25:24.106 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 749.5086ms
+2023-10-08 13:25:24.131 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.9511ms
+2023-10-08 13:25:24.227 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-08 13:25:24.378 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 150.7504ms
+2023-10-08 13:25:53.587 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-08 13:25:53.747 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:25:53.794 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(System.String, System.String) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-08 13:25:54.202 +04:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-10-08 13:25:54.251 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 442.6011ms
+2023-10-08 13:25:54.262 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:25:54.271 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 400 in 667.7734 ms
+2023-10-08 13:25:54.280 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 400 - application/problem+json;+charset=utf-8 692.5307ms
+2023-10-08 13:35:06.540 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-08 13:35:06.810 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-08 13:35:06.811 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-08 13:35:06.818 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-08 13:35:06.820 +04:00 [INF] Hosting environment: Development
+2023-10-08 13:35:06.821 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-08 13:35:07.576 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-08 13:35:08.026 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-08 13:35:08.026 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-08 13:35:08.054 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 479.6839ms
+2023-10-08 13:35:08.054 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 21.1879ms
+2023-10-08 13:35:08.087 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 60.7211ms
+2023-10-08 13:35:08.222 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-08 13:35:08.442 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 219.7934ms
+2023-10-08 13:35:48.058 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-08 13:35:48.213 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:35:48.263 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(System.String, System.String) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-08 13:35:48.645 +04:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-10-08 13:35:48.694 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 415.0904ms
+2023-10-08 13:35:48.703 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:35:48.708 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 400 in 638.7371 ms
+2023-10-08 13:35:48.714 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 400 - application/problem+json;+charset=utf-8 656.1756ms
+2023-10-08 13:45:12.766 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-08 13:45:13.026 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-08 13:45:13.027 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-08 13:45:13.031 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-08 13:45:13.032 +04:00 [INF] Hosting environment: Development
+2023-10-08 13:45:13.033 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-08 13:45:13.548 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-08 13:45:14.115 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 568.7561ms
+2023-10-08 13:45:14.123 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-08 13:45:14.123 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-08 13:45:14.146 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 23.1785ms
+2023-10-08 13:45:14.166 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.9028ms
+2023-10-08 13:45:14.304 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-08 13:45:14.465 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 160.7276ms
+2023-10-08 13:45:52.218 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-08 13:45:52.405 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:45:52.467 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(System.String, System.String) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-08 13:45:52.939 +04:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-10-08 13:45:53.023 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 544.3777ms
+2023-10-08 13:45:53.036 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-08 13:45:53.047 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 400 in 809.9623 ms
+2023-10-08 13:45:53.056 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 400 - application/problem+json;+charset=utf-8 838.3464ms
