@@ -19,6 +19,7 @@ namespace RestAPI_Library_Management_System.models
 
         public int PublicationYear { get; set; }
         public bool IsAvailable { get; set; }
+        public decimal price { get; set; }
 
     }
 }

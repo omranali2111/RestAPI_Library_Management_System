@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestAPI_Library_Management_System.Controllers
 {
@@ -183,14 +184,16 @@ namespace RestAPI_Library_Management_System.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-
+        [Authorize]
         [HttpPost("BorrowBook")]
-        public IActionResult BorrowBook(int patronId, int bookId)
+        public IActionResult BorrowBook(BorrowClass bo)
         {
             try
             {
-                var patron = dbContext.Patrons.FirstOrDefault(p => p.Id == patronId);
-                var book = dbContext.Books.FirstOrDefault(b => b.Id == bookId);
+                var patron = dbContext.Patrons.FirstOrDefault(p => p.Id == bo.patronId);
+
+
+                var book = dbContext.Books.FirstOrDefault(b => b.Id == bo.bookId);
 
                 if (patron != null && book != null)
                 {
@@ -200,8 +203,8 @@ namespace RestAPI_Library_Management_System.Controllers
 
                         var borrowingRecord = new BorrowingHistory
                         {
-                            PatronId = patronId,
-                            BookId = bookId,
+                            PatronId = bo.patronId,
+                            BookId = bo.bookId,
                             BorrowDate = DateTime.Now,
                             ReturnDate = returnDate
                         };

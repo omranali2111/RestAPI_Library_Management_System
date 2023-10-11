@@ -1,0 +1,97 @@
+2023-10-10 12:00:17.777 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json;+charset=utf-8 -
+2023-10-10 12:00:17.918 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-10 12:00:17.922 +04:00 [INF] Route matched with {action = "BorrowBook", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BorrowBook(RestAPI_Library_Management_System.models.BorrowClass) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-10 12:00:18.011 +04:00 [INF] Executed DbCommand (32ms) [Parameters=[@__bo_patronId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Name]
+FROM [Patrons] AS [p]
+WHERE [p].[Id] = @__bo_patronId_0
+2023-10-10 12:00:18.042 +04:00 [INF] Executed DbCommand (9ms) [Parameters=[@__bo_bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__bo_bookId_0
+2023-10-10 12:00:18.480 +04:00 [INF] Executed DbCommand (39ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Books] SET [IsAvailable] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+INSERT INTO [BorrowingHistories] ([BookId], [BorrowDate], [PatronId], [ReturnDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p2, @p3, @p4, @p5);
+2023-10-10 12:00:18.541 +04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-10 12:00:18.564 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System) in 638.686ms
+2023-10-10 12:00:18.566 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-10 12:00:18.567 +04:00 [INF] HTTP POST /api/PatronOperation/BorrowBook responded 200 in 780.3798 ms
+2023-10-10 12:00:18.570 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 794.6258ms
+2023-10-10 12:05:47.511 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-10 12:05:47.905 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-10 12:05:47.915 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-10 12:05:47.926 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 12:05:47.929 +04:00 [INF] Hosting environment: Development
+2023-10-10 12:05:47.931 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-10 12:05:49.074 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-10 12:05:50.460 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-10 12:05:50.460 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 12:05:50.496 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 33.8760ms
+2023-10-10 12:05:50.499 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 1432.3712ms
+2023-10-10 12:05:50.605 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 144.5757ms
+2023-10-10 12:05:50.710 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-10 12:05:51.110 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 399.8574ms
+2023-10-10 12:06:37.992 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-10 12:06:38.171 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 12:06:38.233 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-10 12:06:38.685 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-10 12:06:40.016 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-10 12:06:41.792 +04:00 [INF] Executed DbCommand (149ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-10 12:06:42.077 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-10 12:06:42.100 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 3850.0635ms
+2023-10-10 12:06:42.103 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 12:06:42.115 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 4106.7111 ms
+2023-10-10 12:06:42.149 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 200 - text/plain;+charset=utf-8 4157.7837ms
+2023-10-10 12:07:10.530 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBookandPay application/json;+charset=utf-8 -
+2023-10-10 12:07:10.532 +04:00 [INF] HTTP POST /api/PatronOperation/BorrowBookandPay responded 404 in 0.2878 ms
+2023-10-10 12:07:10.533 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBookandPay application/json;+charset=utf-8 - - 404 0 - 3.3046ms
+2023-10-10 12:16:18.687 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-10 12:16:18.937 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-10 12:16:18.937 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-10 12:16:18.942 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 12:16:18.944 +04:00 [INF] Hosting environment: Development
+2023-10-10 12:16:18.944 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-10 12:16:19.578 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-10 12:16:20.363 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 791.7885ms
+2023-10-10 12:16:20.377 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-10 12:16:20.377 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 12:16:20.398 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 20.3999ms
+2023-10-10 12:16:20.423 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 45.8002ms
+2023-10-10 12:16:20.512 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-10 12:16:20.682 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 169.8404ms
+2023-10-10 12:58:21.222 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-10 12:58:21.534 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-10 12:58:21.535 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-10 12:58:21.541 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 12:58:21.543 +04:00 [INF] Hosting environment: Development
+2023-10-10 12:58:21.543 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-10 12:58:22.395 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-10 12:58:23.056 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-10 12:58:23.057 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 12:58:23.060 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 650.0253ms
+2023-10-10 12:58:23.089 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 32.6054ms
+2023-10-10 12:58:23.151 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 94.9055ms
+2023-10-10 12:58:23.287 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-10 12:58:23.535 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 247.5635ms
+2023-10-10 12:59:12.425 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-10 12:59:12.623 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 12:59:12.682 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-10 12:59:13.227 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-10 12:59:14.508 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-10 12:59:16.509 +04:00 [INF] Executed DbCommand (155ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-10 12:59:16.732 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-10 12:59:16.742 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 4051.3674ms
+2023-10-10 12:59:16.746 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 12:59:16.751 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 4311.5598 ms
+2023-10-10 12:59:16.772 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 200 - text/plain;+charset=utf-8 4347.5612ms

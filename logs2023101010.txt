@@ -1,0 +1,41 @@
+2023-10-10 10:02:00.715 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-10 10:02:01.145 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-10 10:02:01.146 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-10 10:02:01.153 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 10:02:01.154 +04:00 [INF] Hosting environment: Development
+2023-10-10 10:02:01.155 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-10 10:02:01.912 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-10 10:02:02.721 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 10:02:02.724 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 813.8619ms
+2023-10-10 10:02:02.733 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-10 10:02:02.755 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 34.0589ms
+2023-10-10 10:02:02.820 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 87.0455ms
+2023-10-10 10:02:02.907 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-10 10:02:03.170 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 263.3902ms
+2023-10-10 10:02:10.894 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation/ViewAllBooks - -
+2023-10-10 10:02:11.062 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-10-10 10:02:11.078 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-10 10:02:11.082 +04:00 [INF] HTTP GET /api/BookOperation/ViewAllBooks responded 401 in 173.5275 ms
+2023-10-10 10:02:11.088 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation/ViewAllBooks - - - 401 0 - 196.0609ms
+2023-10-10 10:02:47.324 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 55
+2023-10-10 10:02:47.341 +04:00 [INF] CORS policy execution successful.
+2023-10-10 10:02:47.350 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 10:02:47.406 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-10 10:02:47.863 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-10 10:02:49.077 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-10 10:02:50.759 +04:00 [INF] Executed DbCommand (148ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-10 10:02:51.050 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-10 10:02:51.061 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 3645.7741ms
+2023-10-10 10:02:51.062 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 10:02:51.063 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 3731.2170 ms
+2023-10-10 10:02:51.086 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 55 - 200 - text/plain;+charset=utf-8 3765.2546ms
+2023-10-10 10:03:00.890 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation/ViewAllBooks - -
+2023-10-10 10:03:00.898 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-10-10 10:03:00.899 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-10 10:03:00.899 +04:00 [INF] HTTP GET /api/BookOperation/ViewAllBooks responded 401 in 2.5475 ms
+2023-10-10 10:03:00.900 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation/ViewAllBooks - - - 401 0 - 9.9272ms

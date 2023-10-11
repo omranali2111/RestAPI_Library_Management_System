@@ -1,0 +1,142 @@
+2023-10-10 13:00:25.218 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json;+charset=utf-8 -
+2023-10-10 13:00:25.383 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-10 13:00:25.387 +04:00 [INF] Route matched with {action = "BorrowBook", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BorrowBook(RestAPI_Library_Management_System.models.BorrowClass) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-10 13:00:25.472 +04:00 [INF] Executed DbCommand (32ms) [Parameters=[@__bo_patronId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Name]
+FROM [Patrons] AS [p]
+WHERE [p].[Id] = @__bo_patronId_0
+2023-10-10 13:00:25.498 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__bo_bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__bo_bookId_0
+2023-10-10 13:00:25.922 +04:00 [INF] Executed DbCommand (34ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Books] SET [IsAvailable] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+INSERT INTO [BorrowingHistories] ([BookId], [BorrowDate], [PatronId], [ReturnDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p2, @p3, @p4, @p5);
+2023-10-10 13:00:25.986 +04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-10 13:00:26.011 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System) in 622.6669ms
+2023-10-10 13:00:26.014 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-10 13:00:26.016 +04:00 [INF] HTTP POST /api/PatronOperation/BorrowBook responded 200 in 791.9122 ms
+2023-10-10 13:00:26.017 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 798.7708ms
+2023-10-10 13:14:22.928 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-10 13:14:23.201 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-10 13:14:23.202 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-10 13:14:23.207 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-10 13:14:23.209 +04:00 [INF] Hosting environment: Development
+2023-10-10 13:14:23.209 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-10 13:14:24.030 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-10 13:14:24.986 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 967.8770ms
+2023-10-10 13:14:25.019 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-10 13:14:25.013 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-10 13:14:25.056 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 51.2409ms
+2023-10-10 13:14:25.087 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 73.5296ms
+2023-10-10 13:14:25.221 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-10 13:14:25.403 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 182.4578ms
+2023-10-10 13:17:10.857 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-10 13:17:10.977 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 13:17:11.032 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-10 13:17:11.505 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-10 13:17:12.835 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-10 13:17:14.716 +04:00 [INF] Executed DbCommand (153ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-10 13:17:15.031 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-10 13:17:15.050 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 3998.5682ms
+2023-10-10 13:17:15.053 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 13:17:15.058 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 4188.7893 ms
+2023-10-10 13:17:15.092 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 200 - text/plain;+charset=utf-8 4235.0491ms
+2023-10-10 13:17:55.354 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json;+charset=utf-8 -
+2023-10-10 13:17:55.492 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-10 13:17:55.495 +04:00 [INF] Route matched with {action = "BorrowBook", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BorrowBook(RestAPI_Library_Management_System.models.BorrowClass) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-10 13:17:55.550 +04:00 [INF] Executed DbCommand (19ms) [Parameters=[@__bo_patronId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Name]
+FROM [Patrons] AS [p]
+WHERE [p].[Id] = @__bo_patronId_0
+2023-10-10 13:17:55.576 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__bo_bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__bo_bookId_0
+2023-10-10 13:17:55.962 +04:00 [INF] Executed DbCommand (22ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Books] SET [IsAvailable] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+INSERT INTO [BorrowingHistories] ([BookId], [BorrowDate], [PatronId], [ReturnDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p2, @p3, @p4, @p5);
+2023-10-10 13:17:56.024 +04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-10 13:17:56.053 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System) in 556.6545ms
+2023-10-10 13:17:56.056 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-10 13:17:56.057 +04:00 [INF] HTTP POST /api/PatronOperation/BorrowBook responded 200 in 699.0852 ms
+2023-10-10 13:17:56.062 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 707.4244ms
+2023-10-10 13:27:45.719 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-10 13:27:45.728 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 13:27:45.731 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-10 13:27:45.735 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-10 13:27:45.840 +04:00 [INF] Executed DbCommand (19ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-10 13:27:45.844 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-10 13:27:45.847 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 114.7004ms
+2023-10-10 13:27:45.849 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 13:27:45.852 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 128.9163 ms
+2023-10-10 13:27:45.855 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 200 - text/plain;+charset=utf-8 136.8358ms
+2023-10-10 13:28:28.218 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json;+charset=utf-8 -
+2023-10-10 13:28:28.229 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-10 13:28:28.233 +04:00 [INF] Route matched with {action = "BorrowBook", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BorrowBook(RestAPI_Library_Management_System.models.BorrowClass) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-10 13:28:28.253 +04:00 [INF] Executed DbCommand (14ms) [Parameters=[@__bo_patronId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Name]
+FROM [Patrons] AS [p]
+WHERE [p].[Id] = @__bo_patronId_0
+2023-10-10 13:28:28.258 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__bo_bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__bo_bookId_0
+2023-10-10 13:28:28.261 +04:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-10-10 13:28:28.263 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System) in 27.3181ms
+2023-10-10 13:28:28.264 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-10 13:28:28.265 +04:00 [INF] HTTP POST /api/PatronOperation/BorrowBook responded 400 in 39.6974 ms
+2023-10-10 13:28:28.267 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json;+charset=utf-8 - - 400 - text/plain;+charset=utf-8 48.7560ms
+2023-10-10 13:51:27.319 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 -
+2023-10-10 13:51:27.335 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 13:51:27.338 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-10 13:51:27.349 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-10 13:51:27.532 +04:00 [INF] Executed DbCommand (120ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-10 13:51:27.542 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-10 13:51:27.547 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 208.0949ms
+2023-10-10 13:51:27.548 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-10 13:51:27.549 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 217.5638 ms
+2023-10-10 13:51:27.549 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/UserLogin/user-login application/json;+charset=utf-8 - - 200 - text/plain;+charset=utf-8 232.2748ms
+2023-10-10 13:53:33.108 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json;+charset=utf-8 -
+2023-10-10 13:53:33.128 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-10 13:53:33.130 +04:00 [INF] Route matched with {action = "BorrowBook", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BorrowBook(RestAPI_Library_Management_System.models.BorrowClass) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-10 13:53:33.143 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__bo_patronId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Name]
+FROM [Patrons] AS [p]
+WHERE [p].[Id] = @__bo_patronId_0
+2023-10-10 13:53:33.156 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__bo_bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__bo_bookId_0
+2023-10-10 13:53:33.212 +04:00 [INF] Executed DbCommand (22ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Books] SET [IsAvailable] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+INSERT INTO [BorrowingHistories] ([BookId], [BorrowDate], [PatronId], [ReturnDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p2, @p3, @p4, @p5);
+2023-10-10 13:53:33.221 +04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-10 13:53:33.226 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System) in 93.8579ms
+2023-10-10 13:53:33.227 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-10 13:53:33.227 +04:00 [INF] HTTP POST /api/PatronOperation/BorrowBook responded 200 in 117.0219 ms
+2023-10-10 13:53:33.228 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 120.0463ms

@@ -1,0 +1,119 @@
+2023-10-09 11:44:43.275 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-09 11:44:43.462 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-09 11:45:13.121 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-09 11:45:13.594 +04:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-09 11:45:13.632 +04:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-09 11:45:13.635 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-09 11:45:13.635 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-10-09 11:45:13.711 +04:00 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-10-09 11:45:13.723 +04:00 [INF] Applying migration '20231009074443_price'.
+2023-10-09 11:45:13.834 +04:00 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Books] ADD [price] decimal(18,2) NOT NULL DEFAULT 0.0;
+2023-10-09 11:45:13.859 +04:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231009074443_price', N'7.0.11');
+2023-10-09 11:51:01.683 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-09 11:51:02.065 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-09 11:51:02.067 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-09 11:51:02.071 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 11:51:02.072 +04:00 [INF] Hosting environment: Development
+2023-10-09 11:51:02.072 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-09 11:51:03.448 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-09 11:51:04.169 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 722.9794ms
+2023-10-09 11:51:04.183 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 11:51:04.183 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-09 11:51:04.207 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 22.4884ms
+2023-10-09 11:51:04.285 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 102.4418ms
+2023-10-09 11:51:04.386 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-09 11:51:04.664 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 277.5024ms
+2023-10-09 11:51:50.394 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronOperation/BorrowBook?patronId=1&bookId=1 - 0
+2023-10-09 11:51:50.420 +04:00 [INF] CORS policy execution successful.
+2023-10-09 11:51:50.533 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-09 11:51:50.603 +04:00 [INF] Route matched with {action = "BorrowBook", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BorrowBook(Int32, Int32) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-09 11:51:52.183 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-09 11:51:53.741 +04:00 [INF] Executed DbCommand (98ms) [Parameters=[@__patronId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Name]
+FROM [Patrons] AS [p]
+WHERE [p].[Id] = @__patronId_0
+2023-10-09 11:51:53.878 +04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'RestAPI_Library_Management_System.AppDbContextDbContext'.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at lambda_method9(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at lambda_method9(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2023-10-09 11:51:54.006 +04:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-10-09 11:51:54.016 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System) in 3401.7727ms
+2023-10-09 11:51:54.019 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-09 11:51:54.025 +04:00 [ERR] HTTP POST /api/PatronOperation/BorrowBook responded 500 in 3614.7060 ms
+2023-10-09 11:51:54.063 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronOperation/BorrowBook?patronId=1&bookId=1 - 0 - 500 - text/plain;+charset=utf-8 3669.0352ms
+2023-10-09 11:55:38.299 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-09 11:55:38.537 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-09 11:55:38.537 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-09 11:55:38.542 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 11:55:38.543 +04:00 [INF] Hosting environment: Development
+2023-10-09 11:55:38.543 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-09 11:55:39.241 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-09 11:55:39.741 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 11:55:39.741 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-09 11:55:39.762 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 523.8168ms
+2023-10-09 11:55:39.762 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 16.0581ms
+2023-10-09 11:55:39.782 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 39.7903ms
+2023-10-09 11:55:39.892 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-09 11:55:40.034 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 141.4736ms
+2023-10-09 11:56:52.122 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 55
+2023-10-09 11:56:52.134 +04:00 [INF] CORS policy execution successful.
+2023-10-09 11:56:52.226 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-09 11:56:52.255 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-09 11:56:55.593 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-09 11:56:56.243 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-09 11:56:57.286 +04:00 [INF] Executed DbCommand (64ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-09 11:56:57.400 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-09 11:56:57.406 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 5144.8024ms
+2023-10-09 11:56:57.408 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-09 11:56:57.410 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 5278.2371 ms
+2023-10-09 11:56:57.426 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 55 - 200 - text/plain;+charset=utf-8 5304.0255ms
+2023-10-09 11:57:14.441 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation/ViewAllBooks - -
+2023-10-09 11:57:14.461 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-10-09 11:57:14.471 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-09 11:57:14.473 +04:00 [INF] HTTP GET /api/BookOperation/ViewAllBooks responded 401 in 25.5806 ms
+2023-10-09 11:57:14.474 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation/ViewAllBooks - - - 401 0 - 32.8278ms
+2023-10-09 11:59:31.358 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-09 11:59:31.580 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-09 11:59:31.581 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-09 11:59:31.586 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-09 11:59:31.587 +04:00 [INF] Hosting environment: Development
+2023-10-09 11:59:31.587 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-09 11:59:32.576 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-09 11:59:33.165 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-09 11:59:33.165 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-09 11:59:33.181 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 610.6490ms
+2023-10-09 11:59:33.183 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 17.5901ms
+2023-10-09 11:59:33.222 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 57.0283ms
+2023-10-09 11:59:33.326 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-09 11:59:33.488 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 162.6320ms
+2023-10-09 11:59:40.125 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation/ViewAllBooks - -
+2023-10-09 11:59:40.242 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-09 11:59:40.271 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-09 11:59:41.558 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-09 11:59:42.783 +04:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-09 11:59:42.981 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`5[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-09 11:59:43.032 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 2744.068ms
+2023-10-09 11:59:43.036 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-09 11:59:43.046 +04:00 [INF] HTTP GET /api/BookOperation/ViewAllBooks responded 200 in 2902.6295 ms
+2023-10-09 11:59:43.084 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation/ViewAllBooks - - - 200 - application/json;+charset=utf-8 2958.6833ms
