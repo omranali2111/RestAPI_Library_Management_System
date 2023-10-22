@@ -1,0 +1,36 @@
+2023-10-18 20:55:07.022 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-18 20:55:07.419 +04:00 [INF] Now listening on: https://localhost:7166
+2023-10-18 20:55:07.420 +04:00 [INF] Now listening on: http://localhost:5066
+2023-10-18 20:55:07.424 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-18 20:55:07.424 +04:00 [INF] Hosting environment: Development
+2023-10-18 20:55:07.425 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-18 20:55:09.261 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-18 20:55:10.593 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-18 20:55:10.590 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-18 20:55:10.623 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 1367.9477ms
+2023-10-18 20:55:10.627 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 34.4834ms
+2023-10-18 20:55:10.730 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 153.0182ms
+2023-10-18 20:55:10.847 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-18 20:55:10.981 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.2143ms
+2023-10-18 20:55:43.596 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation/ViewAllBooks - -
+2023-10-18 20:55:43.759 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-10-18 20:55:43.774 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-18 20:55:43.782 +04:00 [INF] HTTP GET /api/BookOperation/ViewAllBooks responded 401 in 156.2389 ms
+2023-10-18 20:55:43.793 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation/ViewAllBooks - - - 401 0 - 197.0193ms
+2023-10-18 20:56:40.459 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7166/api/BookOperation/ViewAllBooks - -
+2023-10-18 20:56:40.697 +04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/4/2023 9:39:08 AM', Current time (UTC): '10/18/2023 4:56:40 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-10-18 20:56:40.790 +04:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/4/2023 9:39:08 AM', Current time (UTC): '10/18/2023 4:56:40 PM'.
+2023-10-18 20:56:40.792 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-10-18 20:56:40.797 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-18 20:56:40.797 +04:00 [INF] HTTP GET /api/BookOperation/ViewAllBooks responded 401 in 325.4457 ms
+2023-10-18 20:56:40.808 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7166/api/BookOperation/ViewAllBooks - - - 401 0 - 349.4669ms

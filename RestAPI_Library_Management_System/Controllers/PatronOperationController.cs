@@ -20,15 +20,15 @@ namespace RestAPI_Library_Management_System.Controllers
         {
             dbContext = DB;
         }
-        [HttpPost("add-patron")]
-        public IActionResult AddPatron(string name, string contactInfo)
+        [HttpPost]
+        public IActionResult AddPatron(Patron patron)
         {
             try
             {
                 var newPatron = new Patron
                 {
-                    Name = name,
-                    ContactNumber = contactInfo
+                    Name = patron.Name,
+                    ContactNumber = patron.ContactNumber
                 };
 
                 dbContext.Patrons.Add(newPatron);
@@ -42,7 +42,7 @@ namespace RestAPI_Library_Management_System.Controllers
             }
         }
 
-        [HttpDelete("remove-patron/{patronId}")]
+        [HttpDelete]
         public IActionResult RemovePatron(int patronId)
         {
             try
@@ -67,25 +67,25 @@ namespace RestAPI_Library_Management_System.Controllers
             }
         }
 
-        [HttpPut("update-patron/{patronId}")]
-        public IActionResult UpdatePatron(int patronId, string name, string contactInformation)
+        [HttpPut]
+        public IActionResult UpdatePatron(Patron patron)
         {
             try
             {
-                var patronToUpdate = dbContext.Patrons.FirstOrDefault(patron => patron.Id == patronId);
+                var patronToUpdate = dbContext.Patrons.FirstOrDefault(patron => patron.Id == patron.Id);
 
                 if (patronToUpdate != null)
                 {
-                    patronToUpdate.Name = name;
-                    patronToUpdate.ContactNumber = contactInformation;
+                    patronToUpdate.Name = patron.Name;
+                    patronToUpdate.ContactNumber = patron.ContactNumber;
 
                     dbContext.SaveChanges();
 
-                    return Ok($"Patron with ID {patronId} has been updated.");
+                    return Ok($"Patron with ID {patron.Id} has been updated.");
                 }
                 else
                 {
-                    return NotFound($"Patron with ID {patronId} was not found in the library.");
+                    return NotFound($"Patron with ID {patron.Id} was not found in the library.");
                 }
             }
             catch (Exception ex)
@@ -94,7 +94,7 @@ namespace RestAPI_Library_Management_System.Controllers
             }
         }
 
-        [HttpGet("view-all-patrons")]
+        [HttpGet]
         public IActionResult ViewAllPatrons()
         {
             try
@@ -123,7 +123,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-        [HttpGet("get-patron-by-name")]
+        [HttpGet("patronbyname")]
         public IActionResult GetPatronByName(string patronName)
         {
             try

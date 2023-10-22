@@ -14,7 +14,7 @@ namespace RestAPI_Library_Management_System.Controllers
         {
             dbContext = DB;
         }
-        [HttpGet("ViewBorrowingHistory")]
+        [HttpGet]
         public IActionResult ViewBorrowingHistory(int patronId)
         {
             try
@@ -54,7 +54,7 @@ namespace RestAPI_Library_Management_System.Controllers
             }
         }
 
-        [HttpDelete("RemoveBorrowingTransaction/{transactionId}")]
+        [HttpDelete]
         public IActionResult RemoveBorrowingTransaction(int transactionId)
         {
             try

@@ -18,21 +18,21 @@ namespace RestAPI_Library_Management_System.Controllers
             dbContext = DB;
         }
         
-        [HttpPost("AddBook")]
-        public IActionResult AddBook(string title, string author, int publicationYear)
+        [HttpPost]
+        public IActionResult AddBook(Book book)
         {
             try
             {
-                if (dbContext.Books.Any(b => b.Title == title && b.Author == author))
+                if (dbContext.Books.Any(b => b.Title == book.Title && b.Author == book.Author))
                 {
                     return BadRequest("The book with the same title and author already exists in the library.");
                 }
 
                 var newBook = new Book
                 {
-                    Title = title,
-                    Author = author,
-                    PublicationYear = publicationYear,
+                    Title = book.Title,
+                    Author = book.Author,
+                    PublicationYear = book.PublicationYear,
                     IsAvailable = true
                 };
 
@@ -49,7 +49,7 @@ namespace RestAPI_Library_Management_System.Controllers
             }
         }
 
-        [HttpDelete("RemoveBook")]
+        [HttpDelete]
         public IActionResult RemoveBook(string title)
         {
             try
@@ -76,28 +76,28 @@ namespace RestAPI_Library_Management_System.Controllers
             }
         }
 
-        [HttpPut("UpdateBook")]
-        public IActionResult UpdateBook(int bookId, string newTitle, string newAuthor, int newPublicationYear)
+        [HttpPut]
+        public IActionResult UpdateBook(Book book)
         {
             try
             {
-                var bookToUpdate = dbContext.Books.FirstOrDefault(book => book.Id == bookId);
+                var bookToUpdate = dbContext.Books.FirstOrDefault(book => book.Id == book.Id);
 
                 if (bookToUpdate != null)
                 {
-                    bookToUpdate.Title = newTitle;
-                    bookToUpdate.Author = newAuthor;
-                    bookToUpdate.PublicationYear = newPublicationYear;
+                    bookToUpdate.Title = book.Title;
+                    bookToUpdate.Author = book.Author;
+                    bookToUpdate.PublicationYear = book.PublicationYear;
 
                     dbContext.SaveChanges();
 
                    
 
-                    return Ok($"Book with ID {bookId} has been updated.");
+                    return Ok($"Book with ID {book.Id} has been updated.");
                 }
                 else
                 {
-                    return NotFound($"Book with ID {bookId} was not found.");
+                    return NotFound($"Book with ID {book.Id} was not found.");
                 }
             }
             catch (Exception ex)
@@ -105,8 +105,8 @@ namespace RestAPI_Library_Management_System.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-       [Authorize]
-       [HttpGet("ViewAllBooks")]
+      [Authorize]
+       [HttpGet]
   public IActionResult ViewAllBooks()
 {
     try
@@ -137,7 +137,7 @@ namespace RestAPI_Library_Management_System.Controllers
     }
 }
 
-[HttpGet("GetBooksByPublicationYear")]
+[HttpGet("ByPublicationYear")]
 public IActionResult GetBooksByPublicationYear(int publicationYear)
 {
     try
@@ -166,7 +166,7 @@ public IActionResult GetBooksByPublicationYear(int publicationYear)
     }
 }
 
-[HttpGet("GetBookCountByPublicationYear")]
+[HttpGet("CountByPublicationYear")]
 public IActionResult GetBookCountByPublicationYear(int publicationYear)
 {
     try
@@ -186,7 +186,7 @@ public IActionResult GetBookCountByPublicationYear(int publicationYear)
     }
 }
 
-[HttpGet("GetAvailableBooks")]
+[HttpGet("AvailableBooks")]
 public IActionResult GetAvailableBooks()
 {
     try
@@ -215,7 +215,7 @@ public IActionResult GetAvailableBooks()
     }
 }
 
-[HttpGet("GetBooksByAuthor")]
+[HttpGet("ByAuthor")]
 public IActionResult GetBooksByAuthor(string authorName)
 {
     try
@@ -244,7 +244,7 @@ public IActionResult GetBooksByAuthor(string authorName)
     }
 }
 
-[HttpGet("GetBookByTitle")]
+[HttpGet("ByTitle")]
 public IActionResult GetBookByTitle(string title)
 {
     try

@@ -1,0 +1,136 @@
+2023-10-18 21:02:27.372 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 55
+2023-10-18 21:02:27.379 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:02:27.387 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:02:27.449 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-18 21:02:27.868 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-18 21:02:29.234 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-18 21:02:31.137 +04:00 [INF] Executed DbCommand (147ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-18 21:02:31.338 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-18 21:02:31.351 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 3889.6185ms
+2023-10-18 21:02:31.353 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:02:31.353 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 3976.5571 ms
+2023-10-18 21:02:31.392 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 55 - 200 - text/plain;+charset=utf-8 4020.0327ms
+2023-10-18 21:03:03.112 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7166/api/BookOperation/ViewAllBooks - -
+2023-10-18 21:03:03.156 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-18 21:03:03.159 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-18 21:03:03.230 +04:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-18 21:03:03.264 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`5[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-18 21:03:03.302 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 139.955ms
+2023-10-18 21:03:03.305 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-18 21:03:03.306 +04:00 [INF] HTTP GET /api/BookOperation/ViewAllBooks responded 200 in 193.1271 ms
+2023-10-18 21:03:03.307 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7166/api/BookOperation/ViewAllBooks - - - 200 - application/json;+charset=utf-8 196.0850ms
+2023-10-18 21:13:20.978 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-18 21:13:20.979 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:13:20.981 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 1.6801 ms
+2023-10-18 21:13:20.982 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 3.2985ms
+2023-10-18 21:13:20.983 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-18 21:13:20.983 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:13:20.983 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:13:20.984 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-18 21:13:20.986 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-18 21:13:21.088 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-18 21:13:21.093 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-18 21:13:21.094 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 108.7788ms
+2023-10-18 21:13:21.094 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:13:21.095 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 111.6790 ms
+2023-10-18 21:13:21.096 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 112.8922ms
+2023-10-18 21:13:35.162 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-18 21:13:35.163 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:13:35.164 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 1.0896 ms
+2023-10-18 21:13:35.166 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 4.4020ms
+2023-10-18 21:13:35.168 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-18 21:13:35.169 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:13:35.170 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:13:35.172 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-18 21:13:35.174 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-18 21:13:35.177 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-18 21:13:35.182 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-18 21:13:35.182 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 8.7699ms
+2023-10-18 21:13:35.183 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:13:35.183 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 14.2479 ms
+2023-10-18 21:13:35.184 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 16.6356ms
+2023-10-18 21:18:50.220 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-18 21:18:50.222 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:18:50.222 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 0.4722 ms
+2023-10-18 21:18:50.223 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 3.0779ms
+2023-10-18 21:18:50.227 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-18 21:18:50.227 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:18:50.228 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:18:50.228 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-18 21:18:50.229 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-18 21:18:50.234 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-18 21:18:50.236 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-18 21:18:50.236 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 7.1908ms
+2023-10-18 21:18:50.237 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:18:50.237 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 10.0529 ms
+2023-10-18 21:18:50.238 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 11.3797ms
+2023-10-18 21:19:10.695 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-18 21:19:10.697 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:19:10.698 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 0.9175 ms
+2023-10-18 21:19:10.699 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 4.5076ms
+2023-10-18 21:19:10.700 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-18 21:19:10.701 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:19:10.701 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:19:10.703 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-18 21:19:10.705 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 232
+2023-10-18 21:19:10.709 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-18 21:19:10.714 +04:00 [WRN] Login failed - Invalid credentials.
+2023-10-18 21:19:10.730 +04:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2023-10-18 21:19:10.731 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 26.9276ms
+2023-10-18 21:19:10.733 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:19:10.734 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 401 in 33.3552 ms
+2023-10-18 21:19:10.736 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 401 - text/plain;+charset=utf-8 35.9423ms
+2023-10-18 21:19:13.037 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-18 21:19:13.038 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:19:13.040 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 1.3555 ms
+2023-10-18 21:19:13.042 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 5.3670ms
+2023-10-18 21:19:13.044 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-18 21:19:13.045 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:19:13.046 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:19:13.049 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-18 21:19:13.052 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 232
+2023-10-18 21:19:13.057 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-18 21:19:13.061 +04:00 [WRN] Login failed - Invalid credentials.
+2023-10-18 21:19:13.061 +04:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2023-10-18 21:19:13.062 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 10.7329ms
+2023-10-18 21:19:13.063 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:19:13.065 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 401 in 19.4830 ms
+2023-10-18 21:19:13.066 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 401 - text/plain;+charset=utf-8 21.7493ms
+2023-10-18 21:19:32.924 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-18 21:19:32.925 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:19:32.925 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 0.4187 ms
+2023-10-18 21:19:32.926 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 1.6891ms
+2023-10-18 21:19:32.927 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-18 21:19:32.928 +04:00 [INF] CORS policy execution successful.
+2023-10-18 21:19:32.929 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:19:32.930 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-18 21:19:32.931 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-18 21:19:32.934 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-18 21:19:32.935 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-18 21:19:32.936 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 5.3359ms
+2023-10-18 21:19:32.937 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-18 21:19:32.937 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 9.0859 ms
+2023-10-18 21:19:32.938 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 11.3594ms
