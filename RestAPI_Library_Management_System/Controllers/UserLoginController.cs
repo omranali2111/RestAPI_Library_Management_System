@@ -26,7 +26,7 @@ namespace RestAPI_Library_Management_System.Controllers
         public IActionResult GenerateJwtToken(User data)
         {
             Log.Information($"Received login request - Email: {data.Email}, Password: {data.Password}");
-            var user = dbContext.Users.SingleOrDefault(u => u.Email ==data.Email && u.Password == data.Password);
+            var user = dbContext.Users.SingleOrDefault(u => u.Email == data.Email && u.Password == data.Password);
 
             if (user != null)
             {
@@ -37,7 +37,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 var claims = new List<Claim>
                  {
                         new Claim("email", user.Email),
-           
+
                  };
 
                 var token = new JwtSecurityToken(
@@ -57,6 +57,35 @@ namespace RestAPI_Library_Management_System.Controllers
             }
         }
 
+        [HttpPost("user-register")]
+        public IActionResult userregister(User data)
+        {
+            try
+            {
+                if (dbContext.Users.Any(b => b.Email == data.Email && b.Password == data.Password))
+                {
+                    return BadRequest("The user with the same Email and Password already exists in the library system.");
+                }
+
+                var newUser = new User
+                {
+                    Email = data.Email,
+                    Password = data.Password,
+                    
+                };
+
+                dbContext.Users.Add(newUser);
+                dbContext.SaveChanges();
+
+
+
+                return Ok("User added successfully to the library system.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
     }
 }
 

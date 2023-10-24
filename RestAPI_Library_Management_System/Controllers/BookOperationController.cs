@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RestAPI_Library_Management_System.Migrations;
 using RestAPI_Library_Management_System.models;
 using Serilog;
 
@@ -105,7 +106,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-      [Authorize]
+      
        [HttpGet]
   public IActionResult ViewAllBooks()
 {
@@ -121,6 +122,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 Title = book.Title,
                 Author = book.Author,
                 PublicationYear = book.PublicationYear,
+                ImagePath = book.ImagePath,
                 Availability = book.IsAvailable ? "Available" : "Not Available"
             }).ToList();
                    
@@ -244,35 +246,38 @@ public IActionResult GetBooksByAuthor(string authorName)
     }
 }
 
-[HttpGet("ByTitle")]
-public IActionResult GetBookByTitle(string title)
-{
-    try
-    {
-        var book = dbContext.Books.FirstOrDefault(b => b.Title == title);
-
-        if (book != null)
+        [HttpGet("ByTitle")]
+        public IActionResult GetBooksByTitle(string title)
         {
-            var bookInfo = new
+            try
             {
-                ID = book.Id,
-                Author = book.Author,
-                PublicationYear = book.PublicationYear,
-                Availability = book.IsAvailable ? "Available" : "Not Available"
-            };
+                var books = dbContext.Books.Where(b => b.Title.Contains(title)).ToList();
 
-            return Ok(bookInfo);
+                if (books != null && books.Count > 0)
+                {
+                    var bookInfos = books.Select(book => new
+                    {
+                        ID = book.Id,
+                        Author = book.Author,
+                        PublicationYear = book.PublicationYear,
+                        Availability = book.IsAvailable ? "Available" : "Not Available",
+                        title=book.Title,
+                        imagePath=book.ImagePath,
+                    }).ToList();
+
+                    return Ok(bookInfos);
+                }
+                else
+                {
+                    return NotFound($"Books with title containing '{title}' not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
         }
-        else
-        {
-            return NotFound($"Book '{title}' not found.");
-        }
-    }
-    catch (Exception ex)
-    {
-        return StatusCode(500, $"An error occurred: {ex.Message}");
-    }
-}
+
 
     }
 }

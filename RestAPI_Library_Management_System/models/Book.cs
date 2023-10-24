@@ -21,5 +21,7 @@ namespace RestAPI_Library_Management_System.models
         public bool IsAvailable { get; set; }
         public decimal price { get; set; }
 
+        public string? ImagePath { get; set; }
+
     }
 }

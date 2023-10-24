@@ -1,0 +1,238 @@
+2023-10-24 10:18:41.408 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - -
+2023-10-24 10:18:41.418 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:18:41.419 +04:00 [INF] HTTP OPTIONS /api/BookOperation responded 204 in 0.5716 ms
+2023-10-24 10:18:41.420 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - - - 204 - - 12.5604ms
+2023-10-24 10:18:41.424 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-24 10:18:41.425 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:18:41.426 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:18:41.427 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-24 10:18:41.448 +04:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-24 10:18:41.451 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 10:18:41.453 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 25.3199ms
+2023-10-24 10:18:41.455 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:18:41.457 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 32.4318 ms
+2023-10-24 10:18:41.458 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 33.8736ms
+2023-10-24 10:19:06.376 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-24 10:19:06.390 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:19:06.399 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 8.8596 ms
+2023-10-24 10:19:06.407 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 32.9475ms
+2023-10-24 10:19:06.408 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-24 10:19:06.409 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:19:06.409 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:19:06.410 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-24 10:19:06.412 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-24 10:19:06.435 +04:00 [INF] Executed DbCommand (19ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-24 10:19:06.439 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-24 10:19:06.440 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 29.2166ms
+2023-10-24 10:19:06.443 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:19:06.444 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 35.1257 ms
+2023-10-24 10:19:06.446 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 37.7188ms
+2023-10-24 10:19:15.975 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-24 10:19:15.975 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:19:15.976 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 0.4404 ms
+2023-10-24 10:19:15.977 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 2.1143ms
+2023-10-24 10:19:15.978 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-24 10:19:15.978 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:19:15.978 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:19:15.979 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-24 10:19:15.980 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-24 10:19:15.985 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-24 10:19:15.987 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-24 10:19:15.988 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 7.6415ms
+2023-10-24 10:19:15.989 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:19:15.990 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 12.1316 ms
+2023-10-24 10:19:15.992 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 14.1001ms
+2023-10-24 10:22:36.048 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-24 10:22:36.063 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:22:36.068 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 10.4106 ms
+2023-10-24 10:22:36.071 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 27.1702ms
+2023-10-24 10:22:36.079 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-24 10:22:36.079 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:22:36.080 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:22:36.082 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-24 10:22:36.086 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-24 10:22:36.091 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-24 10:22:36.094 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-24 10:22:36.095 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 10.9809ms
+2023-10-24 10:22:36.096 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:22:36.097 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 17.5102 ms
+2023-10-24 10:22:36.098 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 19.5948ms
+2023-10-24 10:24:45.323 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - -
+2023-10-24 10:24:45.327 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:24:45.328 +04:00 [INF] HTTP OPTIONS /api/BookOperation responded 204 in 0.3643 ms
+2023-10-24 10:24:45.329 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - - - 204 - - 5.0405ms
+2023-10-24 10:24:45.330 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-24 10:24:45.330 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:24:45.330 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:24:45.331 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-24 10:24:45.337 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-24 10:24:45.338 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 10:24:45.339 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 6.7171ms
+2023-10-24 10:24:45.340 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:24:45.340 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 10.3312 ms
+2023-10-24 10:24:45.341 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 11.4322ms
+2023-10-24 10:25:22.133 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-24 10:25:22.142 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:25:22.152 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 9.1915 ms
+2023-10-24 10:25:22.153 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 21.5503ms
+2023-10-24 10:25:22.160 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-24 10:25:22.161 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:25:22.166 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:25:22.168 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-24 10:25:22.171 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-24 10:25:22.175 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-24 10:25:22.182 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-24 10:25:22.183 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 12.4587ms
+2023-10-24 10:25:22.185 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:25:22.186 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 24.9858 ms
+2023-10-24 10:25:22.188 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 28.6738ms
+2023-10-24 10:32:09.879 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - -
+2023-10-24 10:32:09.883 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:32:09.884 +04:00 [INF] HTTP OPTIONS /api/BookOperation responded 204 in 0.9068 ms
+2023-10-24 10:32:09.885 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - - - 204 - - 6.1796ms
+2023-10-24 10:32:09.889 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-24 10:32:09.890 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:32:09.891 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:32:09.891 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-24 10:32:09.931 +04:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-24 10:32:09.933 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 10:32:09.934 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 41.2943ms
+2023-10-24 10:32:09.935 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:32:09.935 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 45.3971 ms
+2023-10-24 10:32:09.936 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 47.0312ms
+2023-10-24 10:32:19.082 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - -
+2023-10-24 10:32:19.084 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:32:19.084 +04:00 [INF] HTTP OPTIONS /api/BookOperation responded 204 in 0.5473 ms
+2023-10-24 10:32:19.085 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - - - 204 - - 3.1283ms
+2023-10-24 10:32:19.086 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-24 10:32:19.086 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:32:19.087 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:32:19.087 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-24 10:32:19.089 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-24 10:32:19.090 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 10:32:19.092 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 3.6163ms
+2023-10-24 10:32:19.093 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:32:19.093 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 7.1593 ms
+2023-10-24 10:32:19.094 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 8.3003ms
+2023-10-24 10:32:43.310 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-24 10:32:43.311 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:32:43.312 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 0.6635 ms
+2023-10-24 10:32:43.313 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 2.6745ms
+2023-10-24 10:32:43.314 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-24 10:32:43.315 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:32:43.315 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:32:43.316 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-24 10:32:43.318 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-24 10:32:43.343 +04:00 [INF] Executed DbCommand (23ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-24 10:32:43.348 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-24 10:32:43.349 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 31.871ms
+2023-10-24 10:32:43.351 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:32:43.356 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 41.4758 ms
+2023-10-24 10:32:43.358 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 44.4700ms
+2023-10-24 10:33:24.848 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - -
+2023-10-24 10:33:24.848 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:33:24.849 +04:00 [INF] HTTP OPTIONS /api/BookOperation responded 204 in 0.4659 ms
+2023-10-24 10:33:24.850 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - - - 204 - - 2.0198ms
+2023-10-24 10:33:24.851 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-24 10:33:24.851 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:33:24.852 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:33:24.852 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-24 10:33:24.855 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-24 10:33:24.857 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 10:33:24.858 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 4.3843ms
+2023-10-24 10:33:24.859 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:33:24.859 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 8.2785 ms
+2023-10-24 10:33:24.860 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 9.5006ms
+2023-10-24 10:33:44.893 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-24 10:33:44.895 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:33:44.896 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 1.0486 ms
+2023-10-24 10:33:44.897 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 3.7867ms
+2023-10-24 10:33:44.900 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-24 10:33:44.901 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:33:44.902 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:33:44.903 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-24 10:33:44.905 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-24 10:33:44.909 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-24 10:33:44.912 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-24 10:33:44.913 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 8.1494ms
+2023-10-24 10:33:44.914 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:33:44.914 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 13.1460 ms
+2023-10-24 10:33:44.915 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 14.8379ms
+2023-10-24 10:51:32.271 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - -
+2023-10-24 10:51:32.273 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:51:32.274 +04:00 [INF] HTTP OPTIONS /api/BookOperation responded 204 in 0.6610 ms
+2023-10-24 10:51:32.275 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - - - 204 - - 3.8911ms
+2023-10-24 10:51:32.276 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-24 10:51:32.277 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:51:32.278 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:51:32.279 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-24 10:51:32.300 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-24 10:51:32.302 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 10:51:32.304 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 23.9185ms
+2023-10-24 10:51:32.305 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:51:32.306 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 28.8923 ms
+2023-10-24 10:51:32.308 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 31.6856ms
+2023-10-24 10:52:27.036 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - -
+2023-10-24 10:52:27.045 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:52:27.047 +04:00 [INF] HTTP OPTIONS /api/BookOperation responded 204 in 6.7501 ms
+2023-10-24 10:52:27.048 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/BookOperation - - - 204 - - 12.0634ms
+2023-10-24 10:52:27.050 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-24 10:52:27.050 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:52:27.050 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:52:27.051 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-24 10:52:27.061 +04:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-24 10:52:27.063 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 10:52:27.064 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 12.1229ms
+2023-10-24 10:52:27.066 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-24 10:52:27.067 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 16.6602 ms
+2023-10-24 10:52:27.067 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 17.8193ms
+2023-10-24 10:52:41.038 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - -
+2023-10-24 10:52:41.040 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:52:41.042 +04:00 [INF] HTTP OPTIONS /api/UserLogin/user-login responded 204 in 2.0524 ms
+2023-10-24 10:52:41.043 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/UserLogin/user-login - - - 204 - - 4.5348ms
+2023-10-24 10:52:41.044 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46
+2023-10-24 10:52:41.046 +04:00 [INF] CORS policy execution successful.
+2023-10-24 10:52:41.047 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:52:41.048 +04:00 [INF] Route matched with {action = "GenerateJwtToken", controller = "UserLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtToken(RestAPI_Library_Management_System.models.User) on controller RestAPI_Library_Management_System.Controllers.UserLoginController (RestAPI_Library_Management_System).
+2023-10-24 10:52:41.049 +04:00 [INF] Received login request - Email: omran@hotmail.com, Password: 123
+2023-10-24 10:52:41.073 +04:00 [INF] Executed DbCommand (22ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-24 10:52:41.077 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-24 10:52:41.080 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System) in 30.6392ms
+2023-10-24 10:52:41.083 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.UserLoginController.GenerateJwtToken (RestAPI_Library_Management_System)'
+2023-10-24 10:52:41.085 +04:00 [INF] HTTP POST /api/UserLogin/user-login responded 200 in 38.6806 ms
+2023-10-24 10:52:41.089 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/UserLogin/user-login application/json 46 - 200 - text/plain;+charset=utf-8 44.3521ms
