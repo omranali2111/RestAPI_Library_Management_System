@@ -11,11 +11,20 @@ namespace RestAPI_Library_Management_System.models
         [MaxLength(255)]
         public string Name { get; set; }
 
+        [Required]
+        [MaxLength(255)]
+        public string Email { get; set; }
+
+        [Required]
+        [MaxLength(255)]
+        public string Password { get; set; }
+
         [MaxLength(255)]
         public string ContactNumber { get; set; }
 
-        [MaxLength(255)]
+        [Range(0, 150)]  
         public int Age { get; set; }
+
 
     }
 }

@@ -1,0 +1,92 @@
+2023-10-25 10:50:40.803 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-25 10:50:41.192 +04:00 [INF] Now listening on: https://0.0.0.0:7166
+2023-10-25 10:50:41.198 +04:00 [INF] Now listening on: http://0.0.0.0:5066
+2023-10-25 10:50:41.209 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-25 10:50:41.211 +04:00 [INF] Hosting environment: Development
+2023-10-25 10:50:41.212 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-25 10:50:46.994 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-25 10:50:47.703 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-25 10:50:47.722 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-25 10:50:47.727 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 735.5693ms
+2023-10-25 10:50:47.729 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 25.4023ms
+2023-10-25 10:50:47.767 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 45.2997ms
+2023-10-25 10:50:47.843 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-25 10:50:48.084 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 241.6896ms
+2023-10-25 10:52:50.348 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-25 10:52:50.470 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 10:52:50.508 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-25 10:52:51.979 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-25 10:52:53.503 +04:00 [INF] Executed DbCommand (122ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-25 10:52:53.702 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-25 10:52:53.737 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 3222.3314ms
+2023-10-25 10:52:53.740 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 10:52:53.747 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 3386.1107 ms
+2023-10-25 10:52:53.779 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 3431.5290ms
+2023-10-25 10:57:54.612 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronOperation application/json 132
+2023-10-25 10:57:54.634 +04:00 [INF] CORS policy execution successful.
+2023-10-25 10:57:54.638 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 10:57:54.658 +04:00 [INF] Route matched with {action = "AddPatron", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddPatron(RestAPI_Library_Management_System.models.Patron) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-25 10:57:54.779 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System) in 118.1954ms
+2023-10-25 10:57:54.785 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 10:57:54.789 +04:00 [ERR] HTTP POST /api/PatronOperation responded 500 in 166.4152 ms
+System.InvalidCastException: The field of type System.Int32 must be a string, array or ICollection type.
+   at System.ComponentModel.DataAnnotations.MaxLengthAttribute.IsValid(Object value)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(Object value, ValidationContext validationContext)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(Object value, ValidationContext validationContext)
+   at Microsoft.AspNetCore.Mvc.DataAnnotations.DataAnnotationsModelValidator.Validate(ModelValidationContext validationContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.ValidateNode()
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitSimpleType()
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitChildren(IValidationStrategy strategy)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitComplexType(IValidationStrategy defaultStrategy)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Validate(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ObjectModelValidator.Validate(ActionContext actionContext, ValidationStateDictionary validationState, String prefix, Object model, ModelMetadata metadata, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.EnforceBindRequiredAndValidate(ObjectModelValidator baseObjectValidator, ActionContext actionContext, ParameterDescriptor parameter, ModelMetadata metadata, ModelBindingContext modelBindingContext, ModelBindingResult modelBindingResult, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-10-25 10:57:54.856 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: The field of type System.Int32 must be a string, array or ICollection type.
+   at System.ComponentModel.DataAnnotations.MaxLengthAttribute.IsValid(Object value)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(Object value, ValidationContext validationContext)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(Object value, ValidationContext validationContext)
+   at Microsoft.AspNetCore.Mvc.DataAnnotations.DataAnnotationsModelValidator.Validate(ModelValidationContext validationContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.ValidateNode()
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitSimpleType()
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitChildren(IValidationStrategy strategy)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitComplexType(IValidationStrategy defaultStrategy)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.VisitImplementation(ModelMetadata& metadata, String& key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Visit(ModelMetadata metadata, String key, Object model)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationVisitor.Validate(ModelMetadata metadata, String key, Object model, Boolean alwaysValidateAtTopLevel, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ObjectModelValidator.Validate(ActionContext actionContext, ValidationStateDictionary validationState, String prefix, Object model, ModelMetadata metadata, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.EnforceBindRequiredAndValidate(ObjectModelValidator baseObjectValidator, ActionContext actionContext, ParameterDescriptor parameter, ModelMetadata metadata, ModelBindingContext modelBindingContext, ModelBindingResult modelBindingResult, Object container)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-25 10:57:54.869 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronOperation application/json 132 - 500 - text/plain;+charset=utf-8 257.6924ms

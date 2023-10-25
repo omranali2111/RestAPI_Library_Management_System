@@ -1,0 +1,133 @@
+2023-10-25 11:06:18.992 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-25 11:06:19.179 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-25 11:11:30.213 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-25 11:11:30.438 +04:00 [INF] Now listening on: https://0.0.0.0:7166
+2023-10-25 11:11:30.439 +04:00 [INF] Now listening on: http://0.0.0.0:5066
+2023-10-25 11:11:30.442 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-25 11:11:30.443 +04:00 [INF] Hosting environment: Development
+2023-10-25 11:11:30.444 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-25 11:11:32.780 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-25 11:11:33.196 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 406.8514ms
+2023-10-25 11:11:33.207 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-25 11:11:33.207 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-25 11:11:33.217 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 10.1953ms
+2023-10-25 11:11:33.235 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.2562ms
+2023-10-25 11:11:33.323 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-25 11:11:33.447 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 124.0381ms
+2023-10-25 11:12:33.759 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronOperation application/json 129
+2023-10-25 11:12:33.772 +04:00 [INF] CORS policy execution successful.
+2023-10-25 11:12:33.908 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:12:33.954 +04:00 [INF] Route matched with {action = "AddPatron", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddPatron(RestAPI_Library_Management_System.models.Patron) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-25 11:12:35.325 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-25 11:12:36.668 +04:00 [INF] Executed DbCommand (133ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 255), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patrons] ([Age], [ContactNumber], [Email], [Name], [Password])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-10-25 11:12:36.790 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-25 11:12:36.801 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System) in 2835.3311ms
+2023-10-25 11:12:36.804 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:12:36.808 +04:00 [INF] HTTP POST /api/PatronOperation responded 200 in 3039.1222 ms
+2023-10-25 11:12:36.829 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronOperation application/json 129 - 200 - text/plain;+charset=utf-8 3070.3921ms
+2023-10-25 11:13:44.520 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 56
+2023-10-25 11:13:44.527 +04:00 [INF] CORS policy execution successful.
+2023-10-25 11:13:44.528 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:13:44.529 +04:00 [INF] Route matched with {action = "GenerateJwtTokenforPatron", controller = "PatronLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtTokenforPatron(RestAPI_Library_Management_System.models.PatronInfo) on controller RestAPI_Library_Management_System.Controllers.PatronLoginController (RestAPI_Library_Management_System).
+2023-10-25 11:13:44.559 +04:00 [INF] Received login request - Email: omar@hotmail.com, Password: 12345
+2023-10-25 11:13:45.318 +04:00 [INF] Executed DbCommand (11ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__data_Email_0 AND [u].[Password] = @__data_Password_1
+2023-10-25 11:13:45.323 +04:00 [WRN] Login failed - Invalid credentials.
+2023-10-25 11:13:45.327 +04:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2023-10-25 11:13:45.328 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System) in 797.5375ms
+2023-10-25 11:13:45.329 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:13:45.330 +04:00 [INF] HTTP POST /api/PatronLogin responded 401 in 802.7615 ms
+2023-10-25 11:13:45.330 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 56 - 401 - text/plain;+charset=utf-8 810.5415ms
+2023-10-25 11:29:58.103 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-25 11:29:58.307 +04:00 [INF] Now listening on: https://0.0.0.0:7166
+2023-10-25 11:29:58.308 +04:00 [INF] Now listening on: http://0.0.0.0:5066
+2023-10-25 11:29:58.311 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-25 11:29:58.312 +04:00 [INF] Hosting environment: Development
+2023-10-25 11:29:58.313 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-25 11:30:13.921 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/index.html - -
+2023-10-25 11:30:14.639 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - -
+2023-10-25 11:30:14.639 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/_vs/browserLink - -
+2023-10-25 11:30:14.671 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_framework/aspnetcore-browser-refresh.js - - - 200 12036 application/javascript;+charset=utf-8 29.5223ms
+2023-10-25 11:30:14.671 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/index.html - - - 200 - text/html;charset=utf-8 763.3340ms
+2023-10-25 11:30:14.715 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 75.8695ms
+2023-10-25 11:30:14.784 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - -
+2023-10-25 11:30:15.021 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 237.5324ms
+2023-10-25 11:30:34.028 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 56
+2023-10-25 11:30:34.049 +04:00 [INF] CORS policy execution successful.
+2023-10-25 11:30:34.176 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:30:34.214 +04:00 [INF] Route matched with {action = "GenerateJwtTokenforPatron", controller = "PatronLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtTokenforPatron(RestAPI_Library_Management_System.models.PatronInfo) on controller RestAPI_Library_Management_System.Controllers.PatronLoginController (RestAPI_Library_Management_System).
+2023-10-25 11:30:40.854 +04:00 [INF] Received login request - Email: omar@hotmail.com, Password: 12345
+2023-10-25 11:30:41.885 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-25 11:30:43.573 +04:00 [INF] Executed DbCommand (144ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Email], [p].[Name], [p].[Password]
+FROM [Patrons] AS [p]
+WHERE [p].[Email] = @__data_Email_0 AND [p].[Password] = @__data_Password_1
+2023-10-25 11:30:43.846 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-25 11:30:43.859 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System) in 9629.4497ms
+2023-10-25 11:30:43.863 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:30:43.869 +04:00 [INF] HTTP POST /api/PatronLogin responded 200 in 9822.1459 ms
+2023-10-25 11:30:43.905 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 56 - 200 - text/plain;+charset=utf-8 9877.4426ms
+2023-10-25 11:35:07.133 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronOperation application/json 121
+2023-10-25 11:35:07.136 +04:00 [INF] CORS policy execution successful.
+2023-10-25 11:35:07.138 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:35:07.141 +04:00 [INF] Route matched with {action = "AddPatron", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddPatron(RestAPI_Library_Management_System.models.Patron) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-25 11:35:07.412 +04:00 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 255), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patrons] ([Age], [ContactNumber], [Email], [Name], [Password])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-10-25 11:35:07.470 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-25 11:35:07.473 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System) in 330.4273ms
+2023-10-25 11:35:07.474 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:35:07.474 +04:00 [INF] HTTP POST /api/PatronOperation responded 200 in 338.4104 ms
+2023-10-25 11:35:07.476 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronOperation application/json 121 - 200 - text/plain;+charset=utf-8 342.9744ms
+2023-10-25 11:36:44.373 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/PatronOperation text/plain 135
+2023-10-25 11:36:44.379 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:36:44.381 +04:00 [INF] Route matched with {action = "AddPatron", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddPatron(RestAPI_Library_Management_System.models.Patron) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-25 11:36:44.389 +04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-10-25 11:36:44.422 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System) in 37.8257ms
+2023-10-25 11:36:44.424 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:36:44.426 +04:00 [INF] HTTP POST /api/PatronOperation responded 415 in 51.0210 ms
+2023-10-25 11:36:44.428 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/PatronOperation text/plain 135 - 415 - application/problem+json;+charset=utf-8 55.6078ms
+2023-10-25 11:38:51.113 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/PatronOperation text/plain 137
+2023-10-25 11:38:51.115 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:38:51.116 +04:00 [INF] Route matched with {action = "AddPatron", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddPatron(RestAPI_Library_Management_System.models.Patron) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-25 11:38:51.118 +04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-10-25 11:38:51.119 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System) in 1.521ms
+2023-10-25 11:38:51.120 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:38:51.121 +04:00 [INF] HTTP POST /api/PatronOperation responded 415 in 6.3485 ms
+2023-10-25 11:38:51.121 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/PatronOperation text/plain 137 - 415 - application/problem+json;+charset=utf-8 9.5448ms
+2023-10-25 11:40:37.015 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/PatronOperation application/json 130
+2023-10-25 11:40:37.016 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:40:37.017 +04:00 [INF] Route matched with {action = "AddPatron", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddPatron(RestAPI_Library_Management_System.models.Patron) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-25 11:40:37.114 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 255), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patrons] ([Age], [ContactNumber], [Email], [Name], [Password])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-10-25 11:40:37.119 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-25 11:40:37.120 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System) in 102.1736ms
+2023-10-25 11:40:37.122 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.AddPatron (RestAPI_Library_Management_System)'
+2023-10-25 11:40:37.123 +04:00 [INF] HTTP POST /api/PatronOperation responded 200 in 107.4943 ms
+2023-10-25 11:40:37.126 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/PatronOperation application/json 130 - 200 - text/plain;+charset=utf-8 113.1683ms
+2023-10-25 11:59:33.632 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-25 11:59:33.644 +04:00 [INF] CORS policy execution successful.
+2023-10-25 11:59:33.646 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 11:59:33.650 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-25 11:59:33.700 +04:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-25 11:59:33.781 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-25 11:59:33.811 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 156.9004ms
+2023-10-25 11:59:33.816 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 11:59:33.816 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 172.5152 ms
+2023-10-25 11:59:33.817 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 185.8831ms

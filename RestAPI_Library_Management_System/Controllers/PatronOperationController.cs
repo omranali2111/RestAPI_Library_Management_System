@@ -27,6 +27,8 @@ namespace RestAPI_Library_Management_System.Controllers
             {
                 var newPatron = new Patron
                 {
+                    Email = patron.Email,
+                    Password = patron.Password,
                     Name = patron.Name,
                     ContactNumber = patron.ContactNumber
                 };

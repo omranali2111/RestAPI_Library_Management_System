@@ -1,0 +1,295 @@
+2023-10-25 14:02:22.641 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - -
+2023-10-25 14:02:22.645 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - -
+2023-10-25 14:02:22.693 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:02:22.693 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:02:22.695 +04:00 [INF] HTTP OPTIONS /api/PatronLogin responded 204 in 1.5848 ms
+2023-10-25 14:02:22.695 +04:00 [INF] HTTP OPTIONS /api/PatronLogin responded 204 in 2.1354 ms
+2023-10-25 14:02:22.698 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - - - 204 - - 58.6613ms
+2023-10-25 14:02:22.700 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - - - 204 - - 54.5413ms
+2023-10-25 14:02:22.700 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45
+2023-10-25 14:02:22.701 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45
+2023-10-25 14:02:22.704 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:02:22.705 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:02:22.708 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:02:22.710 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:02:22.713 +04:00 [INF] Route matched with {action = "GenerateJwtTokenforPatron", controller = "PatronLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtTokenforPatron(RestAPI_Library_Management_System.models.PatronInfo) on controller RestAPI_Library_Management_System.Controllers.PatronLoginController (RestAPI_Library_Management_System).
+2023-10-25 14:02:22.714 +04:00 [INF] Route matched with {action = "GenerateJwtTokenforPatron", controller = "PatronLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtTokenforPatron(RestAPI_Library_Management_System.models.PatronInfo) on controller RestAPI_Library_Management_System.Controllers.PatronLoginController (RestAPI_Library_Management_System).
+2023-10-25 14:02:22.720 +04:00 [INF] Received login request - Email: said@hotmail.com, Password: 123
+2023-10-25 14:02:22.722 +04:00 [INF] Received login request - Email: said@hotmail.com, Password: 123
+2023-10-25 14:02:22.789 +04:00 [INF] Executed DbCommand (24ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Email], [p].[Name], [p].[Password]
+FROM [Patrons] AS [p]
+WHERE [p].[Email] = @__data_Email_0 AND [p].[Password] = @__data_Password_1
+2023-10-25 14:02:22.802 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-25 14:02:22.805 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System) in 84.0338ms
+2023-10-25 14:02:22.810 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:02:22.814 +04:00 [INF] HTTP POST /api/PatronLogin responded 200 in 108.9080 ms
+2023-10-25 14:02:22.819 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45 - 200 - text/plain;+charset=utf-8 118.4784ms
+2023-10-25 14:02:22.931 +04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'RestAPI_Library_Management_System.AppDbContextDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2023-10-25 14:03:11.682 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System) in 48965.619ms
+2023-10-25 14:03:11.692 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:03:11.697 +04:00 [ERR] HTTP POST /api/PatronLogin responded 500 in 48992.6790 ms
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method10(Closure , QueryContext )
+   at System.Linq.Queryable.SingleOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron(PatronInfo data) in C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\Controllers\PatronLoginController.cs:line 27
+   at lambda_method3(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-10-25 14:03:11.806 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method10(Closure , QueryContext )
+   at System.Linq.Queryable.SingleOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron(PatronInfo data) in C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\Controllers\PatronLoginController.cs:line 27
+   at lambda_method3(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-25 14:03:11.857 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45 - 500 - text/plain;+charset=utf-8 49157.7690ms
+2023-10-25 14:03:55.562 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-25 14:03:55.564 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:03:55.566 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 14:03:55.573 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-25 14:03:55.607 +04:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-25 14:03:55.613 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-25 14:03:55.626 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 38.3202ms
+2023-10-25 14:03:55.628 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 14:03:55.630 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 65.9790 ms
+2023-10-25 14:03:55.633 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 71.8379ms
+2023-10-25 14:04:08.995 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - -
+2023-10-25 14:04:08.995 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - -
+2023-10-25 14:04:08.998 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:04:09.001 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:04:09.004 +04:00 [INF] HTTP OPTIONS /api/PatronLogin responded 204 in 5.2968 ms
+2023-10-25 14:04:09.007 +04:00 [INF] HTTP OPTIONS /api/PatronLogin responded 204 in 5.7416 ms
+2023-10-25 14:04:09.016 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45
+2023-10-25 14:04:09.017 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - - - 204 - - 21.9048ms
+2023-10-25 14:04:09.013 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - - - 204 - - 18.7135ms
+2023-10-25 14:04:09.018 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45
+2023-10-25 14:04:09.018 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:04:09.025 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:04:09.028 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:04:09.031 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:04:09.035 +04:00 [INF] Route matched with {action = "GenerateJwtTokenforPatron", controller = "PatronLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtTokenforPatron(RestAPI_Library_Management_System.models.PatronInfo) on controller RestAPI_Library_Management_System.Controllers.PatronLoginController (RestAPI_Library_Management_System).
+2023-10-25 14:04:09.039 +04:00 [INF] Route matched with {action = "GenerateJwtTokenforPatron", controller = "PatronLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtTokenforPatron(RestAPI_Library_Management_System.models.PatronInfo) on controller RestAPI_Library_Management_System.Controllers.PatronLoginController (RestAPI_Library_Management_System).
+2023-10-25 14:04:09.046 +04:00 [INF] Received login request - Email: said@hotmail.com, Password: 123
+2023-10-25 14:04:09.053 +04:00 [INF] Received login request - Email: said@hotmail.com, Password: 123
+2023-10-25 14:04:09.058 +04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'RestAPI_Library_Management_System.AppDbContextDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2023-10-25 14:04:09.064 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Email], [p].[Name], [p].[Password]
+FROM [Patrons] AS [p]
+WHERE [p].[Email] = @__data_Email_0 AND [p].[Password] = @__data_Password_1
+2023-10-25 14:12:07.030 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System) in 477977.2679ms
+2023-10-25 14:12:07.053 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-25 14:12:07.060 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:12:07.066 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System) in 478020.0414ms
+2023-10-25 14:12:07.069 +04:00 [ERR] HTTP POST /api/PatronLogin responded 500 in 478043.8031 ms
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method10(Closure , QueryContext )
+   at System.Linq.Queryable.SingleOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron(PatronInfo data) in C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\Controllers\PatronLoginController.cs:line 27
+   at lambda_method3(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-10-25 14:12:07.069 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:12:07.097 +04:00 [INF] HTTP POST /api/PatronLogin responded 200 in 478078.2433 ms
+2023-10-25 14:12:07.097 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method10(Closure , QueryContext )
+   at System.Linq.Queryable.SingleOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron(PatronInfo data) in C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\Controllers\PatronLoginController.cs:line 27
+   at lambda_method3(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-25 14:12:07.100 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45 - 200 - text/plain;+charset=utf-8 478084.8056ms
+2023-10-25 14:12:07.117 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45 - 500 - text/plain;+charset=utf-8 478098.6131ms
+2023-10-25 14:13:48.385 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7166/api/PatronLogin application/json 59
+2023-10-25 14:13:48.388 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:13:48.392 +04:00 [INF] Route matched with {action = "GenerateJwtTokenforPatron", controller = "PatronLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtTokenforPatron(RestAPI_Library_Management_System.models.PatronInfo) on controller RestAPI_Library_Management_System.Controllers.PatronLoginController (RestAPI_Library_Management_System).
+2023-10-25 14:13:48.399 +04:00 [INF] Received login request - Email: omar@hotmail.com, Password: 12345
+2023-10-25 14:13:48.417 +04:00 [INF] Executed DbCommand (14ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Email], [p].[Name], [p].[Password]
+FROM [Patrons] AS [p]
+WHERE [p].[Email] = @__data_Email_0 AND [p].[Password] = @__data_Password_1
+2023-10-25 14:13:48.420 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-25 14:13:48.423 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System) in 25.148ms
+2023-10-25 14:13:48.426 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:13:48.428 +04:00 [INF] HTTP POST /api/PatronLogin responded 200 in 39.2925 ms
+2023-10-25 14:13:48.432 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7166/api/PatronLogin application/json 59 - 200 - text/plain;+charset=utf-8 48.4228ms
+2023-10-25 14:20:17.455 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-25 14:20:17.510 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:20:17.512 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 14:20:17.515 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-25 14:20:17.545 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-25 14:20:17.550 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-25 14:20:17.554 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 33.7534ms
+2023-10-25 14:20:17.556 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 14:20:17.559 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 48.8574 ms
+2023-10-25 14:20:17.563 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 108.9840ms
+2023-10-25 14:20:35.818 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - -
+2023-10-25 14:20:35.818 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - -
+2023-10-25 14:20:35.821 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:20:35.824 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:20:35.828 +04:00 [INF] HTTP OPTIONS /api/PatronLogin responded 204 in 7.1344 ms
+2023-10-25 14:20:35.830 +04:00 [INF] HTTP OPTIONS /api/PatronLogin responded 204 in 6.3968 ms
+2023-10-25 14:20:35.837 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - - - 204 - - 18.8349ms
+2023-10-25 14:20:35.840 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - - - 204 - - 22.2726ms
+2023-10-25 14:20:35.838 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45
+2023-10-25 14:20:35.842 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45
+2023-10-25 14:20:35.849 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:20:35.850 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:20:35.852 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:20:35.853 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:20:35.858 +04:00 [INF] Route matched with {action = "GenerateJwtTokenforPatron", controller = "PatronLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtTokenforPatron(RestAPI_Library_Management_System.models.PatronInfo) on controller RestAPI_Library_Management_System.Controllers.PatronLoginController (RestAPI_Library_Management_System).
+2023-10-25 14:20:35.863 +04:00 [INF] Route matched with {action = "GenerateJwtTokenforPatron", controller = "PatronLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtTokenforPatron(RestAPI_Library_Management_System.models.PatronInfo) on controller RestAPI_Library_Management_System.Controllers.PatronLoginController (RestAPI_Library_Management_System).
+2023-10-25 14:20:35.870 +04:00 [INF] Received login request - Email: said@hotmail.com, Password: 123
+2023-10-25 14:20:35.874 +04:00 [INF] Received login request - Email: said@hotmail.com, Password: 123
+2023-10-25 14:20:35.877 +04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'RestAPI_Library_Management_System.AppDbContextDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2023-10-25 14:34:24.652 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-25 14:34:24.923 +04:00 [INF] Now listening on: https://0.0.0.0:7166
+2023-10-25 14:34:24.924 +04:00 [INF] Now listening on: http://0.0.0.0:5066
+2023-10-25 14:34:24.929 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-25 14:34:24.930 +04:00 [INF] Hosting environment: Development
+2023-10-25 14:34:24.930 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
+2023-10-25 14:34:37.368 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-25 14:34:37.623 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:34:37.869 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 14:34:37.909 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-25 14:34:40.284 +04:00 [WRN] No store type was specified for the decimal property 'price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-25 14:34:42.623 +04:00 [INF] Executed DbCommand (129ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-25 14:34:42.963 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-25 14:34:43.259 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 5336.8665ms
+2023-10-25 14:34:43.271 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 14:34:43.278 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 5661.1514 ms
+2023-10-25 14:34:43.337 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 5976.1508ms
+2023-10-25 14:35:00.675 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - -
+2023-10-25 14:35:00.682 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:35:00.688 +04:00 [INF] HTTP OPTIONS /api/PatronLogin responded 204 in 5.6893 ms
+2023-10-25 14:35:00.693 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - - - 204 - - 18.5257ms
+2023-10-25 14:35:45.466 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-25 14:35:45.483 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:35:45.487 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 14:35:45.491 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-25 14:35:45.566 +04:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-25 14:35:45.570 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`6[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-25 14:35:45.576 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 76.9696ms
+2023-10-25 14:35:45.581 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-25 14:35:45.588 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 105.5862 ms
+2023-10-25 14:35:45.592 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 126.3768ms
+2023-10-25 14:36:09.739 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - -
+2023-10-25 14:36:09.770 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:36:09.772 +04:00 [INF] HTTP OPTIONS /api/PatronLogin responded 204 in 1.2810 ms
+2023-10-25 14:36:09.777 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/PatronLogin - - - 204 - - 37.2772ms
+2023-10-25 14:36:09.797 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45
+2023-10-25 14:36:09.802 +04:00 [INF] CORS policy execution successful.
+2023-10-25 14:36:09.810 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:36:09.837 +04:00 [INF] Route matched with {action = "GenerateJwtTokenforPatron", controller = "PatronLogin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GenerateJwtTokenforPatron(RestAPI_Library_Management_System.models.PatronInfo) on controller RestAPI_Library_Management_System.Controllers.PatronLoginController (RestAPI_Library_Management_System).
+2023-10-25 14:36:10.023 +04:00 [INF] Received login request - Email: said@hotmail.com, Password: 123
+2023-10-25 14:36:10.684 +04:00 [INF] Executed DbCommand (103ms) [Parameters=[@__data_Email_0='?' (Size = 255), @__data_Password_1='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Email], [p].[Name], [p].[Password]
+FROM [Patrons] AS [p]
+WHERE [p].[Email] = @__data_Email_0 AND [p].[Password] = @__data_Password_1
+2023-10-25 14:36:10.797 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-10-25 14:36:10.802 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System) in 956.6793ms
+2023-10-25 14:36:10.807 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronLoginController.GenerateJwtTokenforPatron (RestAPI_Library_Management_System)'
+2023-10-25 14:36:10.811 +04:00 [INF] HTTP POST /api/PatronLogin responded 200 in 1008.9526 ms
+2023-10-25 14:36:10.816 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronLogin application/json 45 - 200 - text/plain;+charset=utf-8 1018.2081ms

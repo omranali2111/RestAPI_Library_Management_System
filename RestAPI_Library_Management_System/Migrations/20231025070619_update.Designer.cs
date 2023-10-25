@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestAPI_Library_Management_System;
 
@@ -11,9 +12,11 @@ using RestAPI_Library_Management_System;
 namespace RestAPI_Library_Management_System.Migrations
 {
     [DbContext(typeof(AppDbContextDbContext))]
-    partial class AppDbContextDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231025070619_update")]
+    partial class update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
