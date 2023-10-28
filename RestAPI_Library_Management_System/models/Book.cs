@@ -23,5 +23,6 @@ namespace RestAPI_Library_Management_System.models
 
         public string? ImagePath { get; set; }
 
+        public string Description { get; set; }
     }
 }

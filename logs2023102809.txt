@@ -1,0 +1,6 @@
+2023-10-28 09:59:48.258 +04:00 [INF] User profile is available. Using 'C:\Users\ict\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-28 09:59:48.713 +04:00 [INF] Now listening on: https://0.0.0.0:7166
+2023-10-28 09:59:48.714 +04:00 [INF] Now listening on: http://0.0.0.0:5066
+2023-10-28 09:59:48.720 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-28 09:59:48.721 +04:00 [INF] Hosting environment: Development
+2023-10-28 09:59:48.722 +04:00 [INF] Content root path: C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\
