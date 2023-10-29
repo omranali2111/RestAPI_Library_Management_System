@@ -36,40 +36,6 @@ namespace Library.Controllers
         }
 
 
-
-
-        //[HttpPost("SignUp")]
-        //public async Task<IActionResult> SigningUP(SignUp Input)
-        //{
-        //    var NewUser = new ApplicationUser
-        //    { 
-        //      UserName = Input.Name,
-
-        //      Email = Input.Email 
-              
-        //    };   
-
-            
-        //    var result = await _userManager.CreateAsync(NewUser, Input.Password);
-
-        //    if(result.Succeeded) 
-        //    {
-               
-        //        await _userManager.AddToRoleAsync(NewUser, Input.Role);
-        //        //var id=NewUser.Id;
-
-        //        return Ok("User Added");
-
-        //    }
-        //    else
-        //    {
-
-        //        return  BadRequest(result.ToString());
-        //    }
-        //}
-
-
-
         [HttpPost("Login")]
         public async Task<string> LoginAsync(SignIn signInModel)
         {
@@ -147,7 +113,7 @@ namespace Library.Controllers
                 _dBContext.Patrons.Add(userProfile);
                 await _dBContext.SaveChangesAsync();
 
-                return Ok("User Added");
+                return Ok("SignUp is Successful");
             }
             else
             {
