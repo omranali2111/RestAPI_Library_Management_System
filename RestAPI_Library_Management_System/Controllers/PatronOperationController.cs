@@ -20,29 +20,7 @@ namespace RestAPI_Library_Management_System.Controllers
         {
             dbContext = DB;
         }
-        [HttpPost]
-        public IActionResult AddPatron(Patron patron)
-        {
-            try
-            {
-                var newPatron = new Patron
-                {
-                    Email = patron.Email,
-                    Password = patron.Password,
-                    Name = patron.Name,
-                    ContactNumber = patron.ContactNumber
-                };
-
-                dbContext.Patrons.Add(newPatron);
-                dbContext.SaveChanges();
-
-                return Ok("Patron added successfully to the library.");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"An error occurred: {ex.Message}");
-            }
-        }
+       
 
         [HttpDelete]
         public IActionResult RemovePatron(int patronId)

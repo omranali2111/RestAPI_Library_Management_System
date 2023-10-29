@@ -123,6 +123,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 Author = book.Author,
                 PublicationYear = book.PublicationYear,
                 ImagePath = book.ImagePath,
+                description=book.Description,
                 Availability = book.IsAvailable ? "Available" : "Not Available"
             }).ToList();
                    
@@ -258,11 +259,12 @@ public IActionResult GetBooksByAuthor(string authorName)
                     var bookInfos = books.Select(book => new
                     {
                         ID = book.Id,
+                        Title = book.Title,
                         Author = book.Author,
                         PublicationYear = book.PublicationYear,
-                        Availability = book.IsAvailable ? "Available" : "Not Available",
-                        title=book.Title,
-                        imagePath=book.ImagePath,
+                        ImagePath = book.ImagePath,
+                        description = book.Description,
+                        Availability = book.IsAvailable ? "Available" : "Not Available"
                     }).ToList();
 
                     return Ok(bookInfos);

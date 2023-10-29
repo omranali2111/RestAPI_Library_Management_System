@@ -100,3 +100,8 @@ C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Libr
 C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\obj\Debug\net6.0\RestAPI_Library_Management_System.pdb
 C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\obj\Debug\net6.0\RestAPI_Library_Management_System.genruntimeconfig.cache
 C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\obj\Debug\net6.0\ref\RestAPI_Library_Management_System.dll
+C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\ict\Desktop\code-TRA\API\RestAPI_Library_Management_System\RestAPI_Library_Management_System\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

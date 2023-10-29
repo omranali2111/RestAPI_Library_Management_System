@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestAPI_Library_Management_System.models
 {
@@ -11,13 +12,6 @@ namespace RestAPI_Library_Management_System.models
         [MaxLength(255)]
         public string Name { get; set; }
 
-        [Required]
-        [MaxLength(255)]
-        public string Email { get; set; }
-
-        [Required]
-        [MaxLength(255)]
-        public string Password { get; set; }
 
         [MaxLength(255)]
         public string ContactNumber { get; set; }
@@ -25,6 +19,8 @@ namespace RestAPI_Library_Management_System.models
         [Range(0, 150)]  
         public int Age { get; set; }
 
-
+        [ForeignKey("User")]
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }
