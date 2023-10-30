@@ -1,0 +1,58 @@
+2023-10-30 22:00:27.491 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation/ByTitle?title=ang - -
+2023-10-30 22:00:27.518 +04:00 [INF] CORS policy execution successful.
+2023-10-30 22:00:27.521 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.GetBooksByTitle (RestAPI_Library_Management_System)'
+2023-10-30 22:00:27.528 +04:00 [INF] Route matched with {action = "GetBooksByTitle", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetBooksByTitle(System.String) on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-30 22:00:27.627 +04:00 [INF] Executed DbCommand (18ms) [Parameters=[@__title_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[Description], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+WHERE (@__title_0 LIKE N'') OR CHARINDEX(@__title_0, [b].[Title]) > 0
+2023-10-30 22:00:27.635 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`7[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-30 22:00:27.641 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.GetBooksByTitle (RestAPI_Library_Management_System) in 108.1477ms
+2023-10-30 22:00:27.651 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.GetBooksByTitle (RestAPI_Library_Management_System)'
+2023-10-30 22:00:27.654 +04:00 [INF] HTTP GET /api/BookOperation/ByTitle responded 200 in 136.5203 ms
+2023-10-30 22:00:27.657 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation/ByTitle?title=ang - - - 200 - application/json;+charset=utf-8 166.2357ms
+2023-10-30 22:00:35.714 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7166/api/PatronOperation/BorrowBook - -
+2023-10-30 22:00:35.716 +04:00 [INF] CORS policy execution successful.
+2023-10-30 22:00:35.718 +04:00 [INF] HTTP OPTIONS /api/PatronOperation/BorrowBook responded 204 in 1.9653 ms
+2023-10-30 22:00:35.722 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7166/api/PatronOperation/BorrowBook - - - 204 - - 8.2209ms
+2023-10-30 22:00:35.725 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json 27
+2023-10-30 22:00:35.727 +04:00 [INF] CORS policy execution successful.
+2023-10-30 22:00:35.730 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-30 22:00:35.768 +04:00 [INF] Route matched with {action = "BorrowBook", controller = "PatronOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult BorrowBook(RestAPI_Library_Management_System.models.BorrowClass) on controller RestAPI_Library_Management_System.Controllers.PatronOperationController (RestAPI_Library_Management_System).
+2023-10-30 22:00:35.779 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__bo_patronId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Age], [p].[ContactNumber], [p].[Name], [p].[UserId]
+FROM [Patrons] AS [p]
+WHERE [p].[Id] = @__bo_patronId_0
+2023-10-30 22:00:35.795 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__bo_bookId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[Description], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__bo_bookId_0
+2023-10-30 22:00:35.806 +04:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-10-30 22:00:35.814 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System) in 42.554ms
+2023-10-30 22:00:35.820 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.PatronOperationController.BorrowBook (RestAPI_Library_Management_System)'
+2023-10-30 22:00:35.826 +04:00 [INF] HTTP POST /api/PatronOperation/BorrowBook responded 400 in 99.3859 ms
+2023-10-30 22:00:35.830 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7166/api/PatronOperation/BorrowBook application/json 27 - 400 - text/plain;+charset=utf-8 105.4508ms
+2023-10-30 22:01:33.253 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-30 22:01:33.303 +04:00 [INF] CORS policy execution successful.
+2023-10-30 22:01:33.308 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-30 22:01:33.310 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-30 22:01:33.330 +04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[Description], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-30 22:01:33.335 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`7[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-30 22:01:33.337 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 22.6649ms
+2023-10-30 22:01:33.340 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-30 22:01:33.343 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 39.9009 ms
+2023-10-30 22:01:33.345 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 92.3035ms
+2023-10-30 22:01:45.029 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7166/api/BookOperation - -
+2023-10-30 22:01:45.036 +04:00 [INF] CORS policy execution successful.
+2023-10-30 22:01:45.037 +04:00 [INF] Executing endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-30 22:01:45.042 +04:00 [INF] Route matched with {action = "ViewAllBooks", controller = "BookOperation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAllBooks() on controller RestAPI_Library_Management_System.Controllers.BookOperationController (RestAPI_Library_Management_System).
+2023-10-30 22:01:45.047 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[Description], [b].[ImagePath], [b].[IsAvailable], [b].[PublicationYear], [b].[Title], [b].[price]
+FROM [Books] AS [b]
+2023-10-30 22:01:45.049 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`7[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RestAPI_Library_Management_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-30 22:01:45.052 +04:00 [INF] Executed action RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System) in 6.1207ms
+2023-10-30 22:01:45.054 +04:00 [INF] Executed endpoint 'RestAPI_Library_Management_System.Controllers.BookOperationController.ViewAllBooks (RestAPI_Library_Management_System)'
+2023-10-30 22:01:45.056 +04:00 [INF] HTTP GET /api/BookOperation responded 200 in 19.8031 ms
+2023-10-30 22:01:45.062 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7166/api/BookOperation - - - 200 - application/json;+charset=utf-8 33.7423ms

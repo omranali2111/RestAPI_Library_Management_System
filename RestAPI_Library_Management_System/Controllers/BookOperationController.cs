@@ -18,7 +18,7 @@ namespace RestAPI_Library_Management_System.Controllers
         {
             dbContext = DB;
         }
-        
+        [Authorize(Roles ="Admin")]
         [HttpPost]
         public IActionResult AddBook(Book book)
         {
@@ -34,7 +34,10 @@ namespace RestAPI_Library_Management_System.Controllers
                     Title = book.Title,
                     Author = book.Author,
                     PublicationYear = book.PublicationYear,
+                    ImagePath = book.ImagePath,
+                    Description = book.Description,
                     IsAvailable = true
+
                 };
 
                 dbContext.Books.Add(newBook);

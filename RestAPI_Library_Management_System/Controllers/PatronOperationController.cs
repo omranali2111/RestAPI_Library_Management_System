@@ -164,7 +164,7 @@ namespace RestAPI_Library_Management_System.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-        [Authorize]
+        [Authorize(Roles ="User")]
         [HttpPost("BorrowBook")]
         public IActionResult BorrowBook(BorrowClass bo)
         {

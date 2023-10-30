@@ -37,35 +37,30 @@ namespace Library.Controllers
 
 
         [HttpPost("Login")]
-        public async Task<string> LoginAsync(SignIn signInModel)
+        public async Task<IActionResult> LoginAsync(SignIn signInModel)
         {
-
-          var user = await _userManager.FindByEmailAsync(signInModel.Email);
-          var password = await _userManager.CheckPasswordAsync(user, signInModel.Password);
-          var roles = await _userManager.GetRolesAsync(user);
-            
-
+            var user = await _userManager.FindByEmailAsync(signInModel.Email);
+            var password = await _userManager.CheckPasswordAsync(user, signInModel.Password);
+            var roles = await _userManager.GetRolesAsync(user);
 
             var result = await _signInManager.PasswordSignInAsync(signInModel.Email, signInModel.Password, false, false);
 
             if (!password)
             {
                 Console.WriteLine(result.ToString());
-                return null;
+                return BadRequest("Invalid credentials");
             }
 
             var authClaims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, signInModel.Email),
-                //new Claim(ClaimTypes.Role, roles[0]),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
+    {
+        new Claim(ClaimTypes.Name, signInModel.Email),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+    };
 
-            foreach(var item in roles)
+            foreach (var item in roles)
             {
                 authClaims.Add(new Claim(ClaimTypes.Role, item));
             }
-
 
             var authSigninKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JWT:Secret"]));
 
@@ -75,9 +70,20 @@ namespace Library.Controllers
                 expires: DateTime.Now.AddDays(1),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigninKey, SecurityAlgorithms.HmacSha256Signature)
-                );
+            );
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            var patron = _dBContext.Patrons.FirstOrDefault(p => p.UserId == user.Id);
+            if (patron == null)
+            {
+                return BadRequest("Associated patron details not found.");
+            }
+
+            return Ok(new
+            {
+                token = new JwtSecurityTokenHandler().WriteToken(token),
+                role = roles.FirstOrDefault(),
+                patronId = patron.Id
+            });
         }
 
 
@@ -113,7 +119,11 @@ namespace Library.Controllers
                 _dBContext.Patrons.Add(userProfile);
                 await _dBContext.SaveChangesAsync();
 
-                return Ok("SignUp is Successful");
+                return Ok(new
+                {
+                    message = "SignUp is Successful",
+                    patronId = userProfile.Id
+                });
             }
             else
             {
